@@ -1,0 +1,3351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api parser_version="3">
+  <namespace name="Pango" library="pango-1.0">
+    <enum name="Alignment" cname="PangoAlignment" type="enum" gtype="pango_alignment_get_type">
+      <member cname="PANGO_ALIGN_LEFT" name="Left" value="0"/>
+      <member cname="PANGO_ALIGN_CENTER" name="Center" value="1"/>
+      <member cname="PANGO_ALIGN_RIGHT" name="Right" value="2"/>
+    </enum>
+    <enum name="AttrType" cname="PangoAttrType" type="enum" gtype="pango_attr_type_get_type">
+      <member cname="PANGO_ATTR_INVALID" name="Invalid" value="0"/>
+      <member cname="PANGO_ATTR_LANGUAGE" name="Language" value="1"/>
+      <member cname="PANGO_ATTR_FAMILY" name="Family" value="2"/>
+      <member cname="PANGO_ATTR_STYLE" name="Style" value="3"/>
+      <member cname="PANGO_ATTR_WEIGHT" name="Weight" value="4"/>
+      <member cname="PANGO_ATTR_VARIANT" name="Variant" value="5"/>
+      <member cname="PANGO_ATTR_STRETCH" name="Stretch" value="6"/>
+      <member cname="PANGO_ATTR_SIZE" name="Size" value="7"/>
+      <member cname="PANGO_ATTR_FONT_DESC" name="FontDesc" value="8"/>
+      <member cname="PANGO_ATTR_FOREGROUND" name="Foreground" value="9"/>
+      <member cname="PANGO_ATTR_BACKGROUND" name="Background" value="10"/>
+      <member cname="PANGO_ATTR_UNDERLINE" name="Underline" value="11"/>
+      <member cname="PANGO_ATTR_STRIKETHROUGH" name="Strikethrough" value="12"/>
+      <member cname="PANGO_ATTR_RISE" name="Rise" value="13"/>
+      <member cname="PANGO_ATTR_SHAPE" name="Shape" value="14"/>
+      <member cname="PANGO_ATTR_SCALE" name="Scale" value="15"/>
+      <member cname="PANGO_ATTR_FALLBACK" name="Fallback" value="16"/>
+      <member cname="PANGO_ATTR_LETTER_SPACING" name="LetterSpacing" value="17"/>
+      <member cname="PANGO_ATTR_UNDERLINE_COLOR" name="UnderlineColor" value="18"/>
+      <member cname="PANGO_ATTR_STRIKETHROUGH_COLOR" name="StrikethroughColor" value="19"/>
+      <member cname="PANGO_ATTR_ABSOLUTE_SIZE" name="AbsoluteSize" value="20"/>
+      <member cname="PANGO_ATTR_GRAVITY" name="Gravity" value="21"/>
+      <member cname="PANGO_ATTR_GRAVITY_HINT" name="GravityHint" value="22"/>
+    </enum>
+    <enum name="BidiType" cname="PangoBidiType" type="enum" gtype="pango_bidi_type_get_type">
+      <member cname="PANGO_BIDI_TYPE_L" name="L" value="0"/>
+      <member cname="PANGO_BIDI_TYPE_LRE" name="Lre" value="1"/>
+      <member cname="PANGO_BIDI_TYPE_LRO" name="Lro" value="2"/>
+      <member cname="PANGO_BIDI_TYPE_R" name="R" value="3"/>
+      <member cname="PANGO_BIDI_TYPE_AL" name="Al" value="4"/>
+      <member cname="PANGO_BIDI_TYPE_RLE" name="Rle" value="5"/>
+      <member cname="PANGO_BIDI_TYPE_RLO" name="Rlo" value="6"/>
+      <member cname="PANGO_BIDI_TYPE_PDF" name="Pdf" value="7"/>
+      <member cname="PANGO_BIDI_TYPE_EN" name="En" value="8"/>
+      <member cname="PANGO_BIDI_TYPE_ES" name="Es" value="9"/>
+      <member cname="PANGO_BIDI_TYPE_ET" name="Et" value="10"/>
+      <member cname="PANGO_BIDI_TYPE_AN" name="An" value="11"/>
+      <member cname="PANGO_BIDI_TYPE_CS" name="Cs" value="12"/>
+      <member cname="PANGO_BIDI_TYPE_NSM" name="Nsm" value="13"/>
+      <member cname="PANGO_BIDI_TYPE_BN" name="Bn" value="14"/>
+      <member cname="PANGO_BIDI_TYPE_B" name="B" value="15"/>
+      <member cname="PANGO_BIDI_TYPE_S" name="S" value="16"/>
+      <member cname="PANGO_BIDI_TYPE_WS" name="Ws" value="17"/>
+      <member cname="PANGO_BIDI_TYPE_ON" name="On" value="18"/>
+    </enum>
+    <enum name="CoverageLevel" cname="PangoCoverageLevel" type="enum" gtype="pango_coverage_level_get_type">
+      <member cname="PANGO_COVERAGE_NONE" name="None" value="0"/>
+      <member cname="PANGO_COVERAGE_FALLBACK" name="Fallback" value="1"/>
+      <member cname="PANGO_COVERAGE_APPROXIMATE" name="Approximate" value="2"/>
+      <member cname="PANGO_COVERAGE_EXACT" name="Exact" value="3"/>
+    </enum>
+    <enum name="Direction" cname="PangoDirection" type="enum" gtype="pango_direction_get_type">
+      <member cname="PANGO_DIRECTION_LTR" name="Ltr" value="0"/>
+      <member cname="PANGO_DIRECTION_RTL" name="Rtl" value="1"/>
+      <member cname="PANGO_DIRECTION_TTB_LTR" name="TtbLtr" value="2"/>
+      <member cname="PANGO_DIRECTION_TTB_RTL" name="TtbRtl" value="3"/>
+      <member cname="PANGO_DIRECTION_WEAK_LTR" name="WeakLtr" value="4"/>
+      <member cname="PANGO_DIRECTION_WEAK_RTL" name="WeakRtl" value="5"/>
+      <member cname="PANGO_DIRECTION_NEUTRAL" name="Neutral" value="6"/>
+    </enum>
+    <enum name="EllipsizeMode" cname="PangoEllipsizeMode" type="enum" gtype="pango_ellipsize_mode_get_type">
+      <member cname="PANGO_ELLIPSIZE_NONE" name="None" value="0"/>
+      <member cname="PANGO_ELLIPSIZE_START" name="Start" value="1"/>
+      <member cname="PANGO_ELLIPSIZE_MIDDLE" name="Middle" value="2"/>
+      <member cname="PANGO_ELLIPSIZE_END" name="End" value="3"/>
+    </enum>
+    <enum name="Gravity" cname="PangoGravity" type="enum" gtype="pango_gravity_get_type">
+      <member cname="PANGO_GRAVITY_SOUTH" name="South" value="0"/>
+      <member cname="PANGO_GRAVITY_EAST" name="East" value="1"/>
+      <member cname="PANGO_GRAVITY_NORTH" name="North" value="2"/>
+      <member cname="PANGO_GRAVITY_WEST" name="West" value="3"/>
+      <member cname="PANGO_GRAVITY_AUTO" name="Auto" value="4"/>
+    </enum>
+    <enum name="GravityHint" cname="PangoGravityHint" type="enum" gtype="pango_gravity_hint_get_type">
+      <member cname="PANGO_GRAVITY_HINT_NATURAL" name="Natural" value="0"/>
+      <member cname="PANGO_GRAVITY_HINT_STRONG" name="Strong" value="1"/>
+      <member cname="PANGO_GRAVITY_HINT_LINE" name="Line" value="2"/>
+    </enum>
+    <enum name="RenderPart" cname="PangoRenderPart" type="enum" gtype="pango_render_part_get_type">
+      <member cname="PANGO_RENDER_PART_FOREGROUND" name="Foreground" value="0"/>
+      <member cname="PANGO_RENDER_PART_BACKGROUND" name="Background" value="1"/>
+      <member cname="PANGO_RENDER_PART_UNDERLINE" name="Underline" value="2"/>
+      <member cname="PANGO_RENDER_PART_STRIKETHROUGH" name="Strikethrough" value="3"/>
+    </enum>
+    <enum name="Script" cname="PangoScript" type="enum" gtype="pango_script_get_type">
+      <member cname="PANGO_SCRIPT_INVALID_CODE" name="InvalidCode" value="-1"/>
+      <member cname="PANGO_SCRIPT_COMMON" name="Common" value="0"/>
+      <member cname="PANGO_SCRIPT_INHERITED" name="Inherited" value="1"/>
+      <member cname="PANGO_SCRIPT_ARABIC" name="Arabic" value="2"/>
+      <member cname="PANGO_SCRIPT_ARMENIAN" name="Armenian" value="3"/>
+      <member cname="PANGO_SCRIPT_BENGALI" name="Bengali" value="4"/>
+      <member cname="PANGO_SCRIPT_BOPOMOFO" name="Bopomofo" value="5"/>
+      <member cname="PANGO_SCRIPT_CHEROKEE" name="Cherokee" value="6"/>
+      <member cname="PANGO_SCRIPT_COPTIC" name="Coptic" value="7"/>
+      <member cname="PANGO_SCRIPT_CYRILLIC" name="Cyrillic" value="8"/>
+      <member cname="PANGO_SCRIPT_DESERET" name="Deseret" value="9"/>
+      <member cname="PANGO_SCRIPT_DEVANAGARI" name="Devanagari" value="10"/>
+      <member cname="PANGO_SCRIPT_ETHIOPIC" name="Ethiopic" value="11"/>
+      <member cname="PANGO_SCRIPT_GEORGIAN" name="Georgian" value="12"/>
+      <member cname="PANGO_SCRIPT_GOTHIC" name="Gothic" value="13"/>
+      <member cname="PANGO_SCRIPT_GREEK" name="Greek" value="14"/>
+      <member cname="PANGO_SCRIPT_GUJARATI" name="Gujarati" value="15"/>
+      <member cname="PANGO_SCRIPT_GURMUKHI" name="Gurmukhi" value="16"/>
+      <member cname="PANGO_SCRIPT_HAN" name="Han" value="17"/>
+      <member cname="PANGO_SCRIPT_HANGUL" name="Hangul" value="18"/>
+      <member cname="PANGO_SCRIPT_HEBREW" name="Hebrew" value="19"/>
+      <member cname="PANGO_SCRIPT_HIRAGANA" name="Hiragana" value="20"/>
+      <member cname="PANGO_SCRIPT_KANNADA" name="Kannada" value="21"/>
+      <member cname="PANGO_SCRIPT_KATAKANA" name="Katakana" value="22"/>
+      <member cname="PANGO_SCRIPT_KHMER" name="Khmer" value="23"/>
+      <member cname="PANGO_SCRIPT_LAO" name="Lao" value="24"/>
+      <member cname="PANGO_SCRIPT_LATIN" name="Latin" value="25"/>
+      <member cname="PANGO_SCRIPT_MALAYALAM" name="Malayalam" value="26"/>
+      <member cname="PANGO_SCRIPT_MONGOLIAN" name="Mongolian" value="27"/>
+      <member cname="PANGO_SCRIPT_MYANMAR" name="Myanmar" value="28"/>
+      <member cname="PANGO_SCRIPT_OGHAM" name="Ogham" value="29"/>
+      <member cname="PANGO_SCRIPT_OLD_ITALIC" name="OldItalic" value="30"/>
+      <member cname="PANGO_SCRIPT_ORIYA" name="Oriya" value="31"/>
+      <member cname="PANGO_SCRIPT_RUNIC" name="Runic" value="32"/>
+      <member cname="PANGO_SCRIPT_SINHALA" name="Sinhala" value="33"/>
+      <member cname="PANGO_SCRIPT_SYRIAC" name="Syriac" value="34"/>
+      <member cname="PANGO_SCRIPT_TAMIL" name="Tamil" value="35"/>
+      <member cname="PANGO_SCRIPT_TELUGU" name="Telugu" value="36"/>
+      <member cname="PANGO_SCRIPT_THAANA" name="Thaana" value="37"/>
+      <member cname="PANGO_SCRIPT_THAI" name="Thai" value="38"/>
+      <member cname="PANGO_SCRIPT_TIBETAN" name="Tibetan" value="39"/>
+      <member cname="PANGO_SCRIPT_CANADIAN_ABORIGINAL" name="CanadianAboriginal" value="40"/>
+      <member cname="PANGO_SCRIPT_YI" name="Yi" value="41"/>
+      <member cname="PANGO_SCRIPT_TAGALOG" name="Tagalog" value="42"/>
+      <member cname="PANGO_SCRIPT_HANUNOO" name="Hanunoo" value="43"/>
+      <member cname="PANGO_SCRIPT_BUHID" name="Buhid" value="44"/>
+      <member cname="PANGO_SCRIPT_TAGBANWA" name="Tagbanwa" value="45"/>
+      <member cname="PANGO_SCRIPT_BRAILLE" name="Braille" value="46"/>
+      <member cname="PANGO_SCRIPT_CYPRIOT" name="Cypriot" value="47"/>
+      <member cname="PANGO_SCRIPT_LIMBU" name="Limbu" value="48"/>
+      <member cname="PANGO_SCRIPT_OSMANYA" name="Osmanya" value="49"/>
+      <member cname="PANGO_SCRIPT_SHAVIAN" name="Shavian" value="50"/>
+      <member cname="PANGO_SCRIPT_LINEAR_B" name="LinearB" value="51"/>
+      <member cname="PANGO_SCRIPT_TAI_LE" name="TaiLe" value="52"/>
+      <member cname="PANGO_SCRIPT_UGARITIC" name="Ugaritic" value="53"/>
+      <member cname="PANGO_SCRIPT_NEW_TAI_LUE" name="NewTaiLue" value="54"/>
+      <member cname="PANGO_SCRIPT_BUGINESE" name="Buginese" value="55"/>
+      <member cname="PANGO_SCRIPT_GLAGOLITIC" name="Glagolitic" value="56"/>
+      <member cname="PANGO_SCRIPT_TIFINAGH" name="Tifinagh" value="57"/>
+      <member cname="PANGO_SCRIPT_SYLOTI_NAGRI" name="SylotiNagri" value="58"/>
+      <member cname="PANGO_SCRIPT_OLD_PERSIAN" name="OldPersian" value="59"/>
+      <member cname="PANGO_SCRIPT_KHAROSHTHI" name="Kharoshthi" value="60"/>
+      <member cname="PANGO_SCRIPT_UNKNOWN" name="Unknown" value="61"/>
+      <member cname="PANGO_SCRIPT_BALINESE" name="Balinese" value="62"/>
+      <member cname="PANGO_SCRIPT_CUNEIFORM" name="Cuneiform" value="63"/>
+      <member cname="PANGO_SCRIPT_PHOENICIAN" name="Phoenician" value="64"/>
+      <member cname="PANGO_SCRIPT_PHAGS_PA" name="PhagsPa" value="65"/>
+      <member cname="PANGO_SCRIPT_NKO" name="Nko" value="66"/>
+      <member cname="PANGO_SCRIPT_KAYAH_LI" name="KayahLi" value="67"/>
+      <member cname="PANGO_SCRIPT_LEPCHA" name="Lepcha" value="68"/>
+      <member cname="PANGO_SCRIPT_REJANG" name="Rejang" value="69"/>
+      <member cname="PANGO_SCRIPT_SUNDANESE" name="Sundanese" value="70"/>
+      <member cname="PANGO_SCRIPT_SAURASHTRA" name="Saurashtra" value="71"/>
+      <member cname="PANGO_SCRIPT_CHAM" name="Cham" value="72"/>
+      <member cname="PANGO_SCRIPT_OL_CHIKI" name="OlChiki" value="73"/>
+      <member cname="PANGO_SCRIPT_VAI" name="Vai" value="74"/>
+      <member cname="PANGO_SCRIPT_CARIAN" name="Carian" value="75"/>
+      <member cname="PANGO_SCRIPT_LYCIAN" name="Lycian" value="76"/>
+      <member cname="PANGO_SCRIPT_LYDIAN" name="Lydian" value="77"/>
+      <member cname="PANGO_SCRIPT_BATAK" name="Batak" value="78"/>
+      <member cname="PANGO_SCRIPT_BRAHMI" name="Brahmi" value="79"/>
+      <member cname="PANGO_SCRIPT_MANDAIC" name="Mandaic" value="80"/>
+      <member cname="PANGO_SCRIPT_CHAKMA" name="Chakma" value="81"/>
+      <member cname="PANGO_SCRIPT_MEROITIC_CURSIVE" name="MeroiticCursive" value="82"/>
+      <member cname="PANGO_SCRIPT_MEROITIC_HIEROGLYPHS" name="MeroiticHieroglyphs" value="83"/>
+      <member cname="PANGO_SCRIPT_MIAO" name="Miao" value="84"/>
+      <member cname="PANGO_SCRIPT_SHARADA" name="Sharada" value="85"/>
+      <member cname="PANGO_SCRIPT_SORA_SOMPENG" name="SoraSompeng" value="86"/>
+      <member cname="PANGO_SCRIPT_TAKRI" name="Takri" value="87"/>
+    </enum>
+    <enum name="Stretch" cname="PangoStretch" type="enum" gtype="pango_stretch_get_type">
+      <member cname="PANGO_STRETCH_ULTRA_CONDENSED" name="UltraCondensed" value="0"/>
+      <member cname="PANGO_STRETCH_EXTRA_CONDENSED" name="ExtraCondensed" value="1"/>
+      <member cname="PANGO_STRETCH_CONDENSED" name="Condensed" value="2"/>
+      <member cname="PANGO_STRETCH_SEMI_CONDENSED" name="SemiCondensed" value="3"/>
+      <member cname="PANGO_STRETCH_NORMAL" name="Normal" value="4"/>
+      <member cname="PANGO_STRETCH_SEMI_EXPANDED" name="SemiExpanded" value="5"/>
+      <member cname="PANGO_STRETCH_EXPANDED" name="Expanded" value="6"/>
+      <member cname="PANGO_STRETCH_EXTRA_EXPANDED" name="ExtraExpanded" value="7"/>
+      <member cname="PANGO_STRETCH_ULTRA_EXPANDED" name="UltraExpanded" value="8"/>
+    </enum>
+    <enum name="Style" cname="PangoStyle" type="enum" gtype="pango_style_get_type">
+      <member cname="PANGO_STYLE_NORMAL" name="Normal" value="0"/>
+      <member cname="PANGO_STYLE_OBLIQUE" name="Oblique" value="1"/>
+      <member cname="PANGO_STYLE_ITALIC" name="Italic" value="2"/>
+    </enum>
+    <enum name="TabAlign" cname="PangoTabAlign" type="enum" gtype="pango_tab_align_get_type">
+      <member cname="PANGO_TAB_LEFT" name="Left" value="0"/>
+    </enum>
+    <enum name="Underline" cname="PangoUnderline" type="enum" gtype="pango_underline_get_type">
+      <member cname="PANGO_UNDERLINE_NONE" name="None" value="0"/>
+      <member cname="PANGO_UNDERLINE_SINGLE" name="Single" value="1"/>
+      <member cname="PANGO_UNDERLINE_DOUBLE" name="Double" value="2"/>
+      <member cname="PANGO_UNDERLINE_LOW" name="Low" value="3"/>
+      <member cname="PANGO_UNDERLINE_ERROR" name="Error" value="4"/>
+    </enum>
+    <enum name="Variant" cname="PangoVariant" type="enum" gtype="pango_variant_get_type">
+      <member cname="PANGO_VARIANT_NORMAL" name="Normal" value="0"/>
+      <member cname="PANGO_VARIANT_SMALL_CAPS" name="SmallCaps" value="1"/>
+    </enum>
+    <enum name="Weight" cname="PangoWeight" type="enum" gtype="pango_weight_get_type">
+      <member cname="PANGO_WEIGHT_THIN" name="Thin" value="100"/>
+      <member cname="PANGO_WEIGHT_ULTRALIGHT" name="Ultralight" value="200"/>
+      <member cname="PANGO_WEIGHT_LIGHT" name="Light" value="300"/>
+      <member cname="PANGO_WEIGHT_BOOK" name="Book" value="380"/>
+      <member cname="PANGO_WEIGHT_NORMAL" name="Normal" value="400"/>
+      <member cname="PANGO_WEIGHT_MEDIUM" name="Medium" value="500"/>
+      <member cname="PANGO_WEIGHT_SEMIBOLD" name="Semibold" value="600"/>
+      <member cname="PANGO_WEIGHT_BOLD" name="Bold" value="700"/>
+      <member cname="PANGO_WEIGHT_ULTRABOLD" name="Ultrabold" value="800"/>
+      <member cname="PANGO_WEIGHT_HEAVY" name="Heavy" value="900"/>
+      <member cname="PANGO_WEIGHT_ULTRAHEAVY" name="Ultraheavy" value="1000"/>
+    </enum>
+    <enum name="WrapMode" cname="PangoWrapMode" type="enum" gtype="pango_wrap_mode_get_type">
+      <member cname="PANGO_WRAP_WORD" name="Word" value="0"/>
+      <member cname="PANGO_WRAP_CHAR" name="Char" value="1"/>
+      <member cname="PANGO_WRAP_WORD_CHAR" name="WordChar" value="2"/>
+    </enum>
+    <enum name="FontMask" cname="PangoFontMask" type="flags" gtype="pango_font_mask_get_type">
+      <member cname="PANGO_FONT_MASK_FAMILY" name="Family" value="1"/>
+      <member cname="PANGO_FONT_MASK_STYLE" name="Style" value="2"/>
+      <member cname="PANGO_FONT_MASK_VARIANT" name="Variant" value="4"/>
+      <member cname="PANGO_FONT_MASK_WEIGHT" name="Weight" value="8"/>
+      <member cname="PANGO_FONT_MASK_STRETCH" name="Stretch" value="16"/>
+      <member cname="PANGO_FONT_MASK_SIZE" name="Size" value="32"/>
+      <member cname="PANGO_FONT_MASK_GRAVITY" name="Gravity" value="64"/>
+    </enum>
+    <callback hidden="0" name="AttrDataCopyFunc" cname="PangoAttrDataCopyFunc">
+      <return-type type="gpointer"/>
+      <parameters>
+        <parameter name="user_data" type="gpointer"/>
+      </parameters>
+    </callback>
+    <callback name="AttrFilterFunc" cname="PangoAttrFilterFunc">
+      <return-type type="gboolean"/>
+      <parameters>
+        <parameter name="attribute" type="PangoAttribute*">
+          <warning>missing glib:type-name</warning>
+        </parameter>
+        <parameter name="user_data" type="gpointer"/>
+      </parameters>
+    </callback>
+    <callback name="FontsetForeachFunc" cname="PangoFontsetForeachFunc">
+      <return-type type="gboolean"/>
+      <parameters>
+        <parameter name="fontset" type="PangoFontset*"/>
+        <parameter name="font" type="PangoFont*"/>
+        <parameter name="user_data" type="gpointer"/>
+      </parameters>
+    </callback>
+    <object name="Context" cname="PangoContext" abstract="false" opaque="false" hidden="false" parent="GObject">
+      <class_struct cname="PangoContextClass"/>
+      <method name="GetType" cname="pango_context_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <constructor cname="pango_context_new" disable_void_ctor=""/>
+      <method name="Changed" cname="pango_context_changed">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="GetBaseDir" cname="pango_context_get_base_dir">
+        <return-type type="PangoDirection"/>
+        <parameters/>
+      </method>
+      <method name="GetBaseGravity" cname="pango_context_get_base_gravity">
+        <return-type type="PangoGravity"/>
+        <parameters/>
+      </method>
+      <method name="GetFontDescription" cname="pango_context_get_font_description">
+        <return-type type="PangoFontDescription*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetFontMap" cname="pango_context_get_font_map">
+        <return-type type="PangoFontMap*"/>
+        <parameters/>
+      </method>
+      <method name="GetGravity" cname="pango_context_get_gravity">
+        <return-type type="PangoGravity"/>
+        <parameters/>
+      </method>
+      <method name="GetGravityHint" cname="pango_context_get_gravity_hint">
+        <return-type type="PangoGravityHint"/>
+        <parameters/>
+      </method>
+      <method name="GetLanguage" cname="pango_context_get_language">
+        <return-type type="PangoLanguage*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetMatrix" cname="pango_context_get_matrix">
+        <return-type type="PangoMatrix*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetMetrics" cname="pango_context_get_metrics">
+        <return-type type="PangoFontMetrics*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter allow-none="1" name="desc" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="language" type="PangoLanguage*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetSerial" cname="pango_context_get_serial">
+        <return-type type="guint"/>
+        <parameters/>
+      </method>
+      <method name="ListFamilies" cname="pango_context_list_families">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="families" type="PangoFontFamily***" pass_as="out" array="true" array_length_param_index="1"/>
+          <parameter name="n_families" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="LoadFont" cname="pango_context_load_font">
+        <return-type type="PangoFont*" owned="true"/>
+        <parameters>
+          <parameter name="desc" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="LoadFontset" cname="pango_context_load_fontset">
+        <return-type type="PangoFontset*" owned="true"/>
+        <parameters>
+          <parameter name="desc" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="language" type="PangoLanguage*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="SetBaseDir" cname="pango_context_set_base_dir">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="direction" type="PangoDirection"/>
+        </parameters>
+      </method>
+      <method name="SetBaseGravity" cname="pango_context_set_base_gravity">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="gravity" type="PangoGravity"/>
+        </parameters>
+      </method>
+      <method name="SetFontDescription" cname="pango_context_set_font_description">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="desc" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="SetFontMap" cname="pango_context_set_font_map">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="font_map" type="PangoFontMap*"/>
+        </parameters>
+      </method>
+      <method name="SetGravityHint" cname="pango_context_set_gravity_hint">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="hint" type="PangoGravityHint"/>
+        </parameters>
+      </method>
+      <method name="SetLanguage" cname="pango_context_set_language">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="language" type="PangoLanguage*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="SetMatrix" cname="pango_context_set_matrix">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="matrix" type="PangoMatrix*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+    </object>
+    <object name="Font" cname="PangoFont" abstract="true" opaque="false" hidden="false" parent="GObject">
+      <method name="GetType" cname="pango_font_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="DescriptionsFree" cname="pango_font_descriptions_free" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="descs" type="PangoFontDescription***" owned="true" array="true" array_length_param_index="1"/>
+          <parameter name="n_descs" type="gint"/>
+        </parameters>
+      </method>
+      <method name="Describe" cname="pango_font_describe">
+        <return-type type="PangoFontDescription*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="DescribeWithAbsoluteSize" cname="pango_font_describe_with_absolute_size">
+        <return-type type="PangoFontDescription*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetFontMap" cname="pango_font_get_font_map">
+        <return-type type="PangoFontMap*"/>
+        <parameters/>
+      </method>
+      <method name="GetGlyphExtents" cname="pango_font_get_glyph_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="glyph" type="guint32"/>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetMetrics" cname="pango_font_get_metrics">
+        <return-type type="PangoFontMetrics*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter allow-none="1" name="language" type="PangoLanguage*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+    </object>
+    <object name="FontFace" cname="PangoFontFace" abstract="true" opaque="false" hidden="false" parent="GObject">
+      <method name="GetType" cname="pango_font_face_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="Describe" cname="pango_font_face_describe">
+        <return-type type="PangoFontDescription*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetFaceName" cname="pango_font_face_get_face_name">
+        <return-type type="const-gchar*"/>
+        <parameters/>
+      </method>
+      <method name="IsSynthesized" cname="pango_font_face_is_synthesized">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="ListSizes" cname="pango_font_face_list_sizes">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="sizes" type="int***" owned="true" pass_as="out" array="true" array_length_param_index="1"/>
+          <parameter name="n_sizes" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+    </object>
+    <object name="FontFamily" cname="PangoFontFamily" abstract="true" opaque="false" hidden="false" parent="GObject">
+      <method name="GetType" cname="pango_font_family_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="GetName" cname="pango_font_family_get_name">
+        <return-type type="const-gchar*"/>
+        <parameters/>
+      </method>
+      <method name="IsMonospace" cname="pango_font_family_is_monospace">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="ListFaces" cname="pango_font_family_list_faces">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="faces" type="PangoFontFace***" pass_as="out" array="true" array_length_param_index="1"/>
+          <parameter name="n_faces" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+    </object>
+    <object name="FontMap" cname="PangoFontMap" abstract="true" opaque="false" hidden="false" parent="GObject">
+      <method name="GetType" cname="pango_font_map_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="CreateContext" cname="pango_font_map_create_context">
+        <return-type type="PangoContext*" owned="true"/>
+        <parameters/>
+      </method>
+      <method name="GetSerial" cname="pango_font_map_get_serial">
+        <return-type type="guint"/>
+        <parameters/>
+      </method>
+      <method name="ListFamilies" cname="pango_font_map_list_families">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="families" type="PangoFontFamily***" pass_as="out" array="true" array_length_param_index="1"/>
+          <parameter name="n_families" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="LoadFont" cname="pango_font_map_load_font">
+        <return-type type="PangoFont*" owned="true"/>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+          <parameter name="desc" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="LoadFontset" cname="pango_font_map_load_fontset">
+        <return-type type="PangoFontset*" owned="true"/>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+          <parameter name="desc" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="language" type="PangoLanguage*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+    </object>
+    <object name="Fontset" cname="PangoFontset" abstract="true" opaque="false" hidden="false" parent="GObject">
+      <method name="GetType" cname="pango_fontset_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="Foreach" cname="pango_fontset_foreach">
+        <return-type type="void"/>
+        <parameters>
+          <parameter closure="1" scope="call" name="func" type="PangoFontsetForeachFunc"/>
+          <parameter name="data" type="gpointer"/>
+        </parameters>
+      </method>
+      <method name="GetFont" cname="pango_fontset_get_font">
+        <return-type type="PangoFont*" owned="true"/>
+        <parameters>
+          <parameter name="wc" type="guint"/>
+        </parameters>
+      </method>
+      <method name="GetMetrics" cname="pango_fontset_get_metrics">
+        <return-type type="PangoFontMetrics*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+    </object>
+    <object name="Layout" cname="PangoLayout" abstract="false" opaque="false" hidden="false" parent="GObject">
+      <class_struct cname="PangoLayoutClass"/>
+      <method name="GetType" cname="pango_layout_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <constructor cname="pango_layout_new">
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+        </parameters>
+      </constructor>
+      <method name="ContextChanged" cname="pango_layout_context_changed">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="Copy" cname="pango_layout_copy">
+        <return-type type="PangoLayout*" owned="true"/>
+        <parameters/>
+      </method>
+      <method name="GetAlignment" cname="pango_layout_get_alignment">
+        <return-type type="PangoAlignment"/>
+        <parameters/>
+      </method>
+      <method name="GetAttributes" cname="pango_layout_get_attributes">
+        <return-type type="PangoAttrList*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetAutoDir" cname="pango_layout_get_auto_dir">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="GetBaseline" cname="pango_layout_get_baseline">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetCharacterCount" cname="pango_layout_get_character_count">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetContext" cname="pango_layout_get_context">
+        <return-type type="PangoContext*"/>
+        <parameters/>
+      </method>
+      <method name="GetCursorPos" cname="pango_layout_get_cursor_pos">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="index_" type="gint"/>
+          <parameter allow-none="1" name="strong_pos" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="weak_pos" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetEllipsize" cname="pango_layout_get_ellipsize">
+        <return-type type="PangoEllipsizeMode"/>
+        <parameters/>
+      </method>
+      <method name="GetExtents" cname="pango_layout_get_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetFontDescription" cname="pango_layout_get_font_description">
+        <return-type type="PangoFontDescription*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetHeight" cname="pango_layout_get_height">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetIndent" cname="pango_layout_get_indent">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetIter" cname="pango_layout_get_iter">
+        <return-type type="PangoLayoutIter*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetJustify" cname="pango_layout_get_justify">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="GetLine" cname="pango_layout_get_line">
+        <return-type type="PangoLayoutLine*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="line" type="gint"/>
+        </parameters>
+      </method>
+      <method name="GetLineCount" cname="pango_layout_get_line_count">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetLineReadonly" cname="pango_layout_get_line_readonly">
+        <return-type type="PangoLayoutLine*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="line" type="gint"/>
+        </parameters>
+      </method>
+      <method name="GetLines" cname="pango_layout_get_lines">
+        <return-type type="GSList*" element_type="GSList*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetLinesReadonly" cname="pango_layout_get_lines_readonly">
+        <return-type type="GSList*" element_type="GSList*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetLogAttrs" cname="pango_layout_get_log_attrs">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="attrs" type="PangoLogAttr**" pass_as="out" array="true" array_length_param_index="1"/>
+          <parameter name="n_attrs" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="GetLogAttrsReadonly" cname="pango_layout_get_log_attrs_readonly">
+        <return-type type="PangoLogAttr*" array="true" array_length_param_index="0"/>
+        <parameters>
+          <parameter name="n_attrs" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="GetPixelExtents" cname="pango_layout_get_pixel_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetPixelSize" cname="pango_layout_get_pixel_size">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="width" type="gint*" owned="true" pass_as="out"/>
+          <parameter allow-none="1" name="height" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="GetSerial" cname="pango_layout_get_serial">
+        <return-type type="guint"/>
+        <parameters/>
+      </method>
+      <method name="GetSingleParagraphMode" cname="pango_layout_get_single_paragraph_mode">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="GetSize" cname="pango_layout_get_size">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="width" type="gint" pass_as="out"/>
+          <parameter allow-none="1" name="height" type="gint" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="GetSpacing" cname="pango_layout_get_spacing">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetTabs" cname="pango_layout_get_tabs">
+        <return-type type="PangoTabArray*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetText" cname="pango_layout_get_text">
+        <return-type type="const-gchar*"/>
+        <parameters/>
+      </method>
+      <method name="GetUnknownGlyphsCount" cname="pango_layout_get_unknown_glyphs_count">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetWidth" cname="pango_layout_get_width">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetWrap" cname="pango_layout_get_wrap">
+        <return-type type="PangoWrapMode"/>
+        <parameters/>
+      </method>
+      <method name="IndexToLineX" cname="pango_layout_index_to_line_x">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="index_" type="gint"/>
+          <parameter name="trailing" type="gboolean"/>
+          <parameter allow-none="1" name="line" type="gint*" owned="true" pass_as="out"/>
+          <parameter allow-none="1" name="x_pos" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="IndexToPos" cname="pango_layout_index_to_pos">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="index_" type="gint"/>
+          <parameter name="pos" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="IsEllipsized" cname="pango_layout_is_ellipsized">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="IsWrapped" cname="pango_layout_is_wrapped">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="MoveCursorVisually" cname="pango_layout_move_cursor_visually">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="strong" type="gboolean"/>
+          <parameter name="old_index" type="gint"/>
+          <parameter name="old_trailing" type="gint"/>
+          <parameter name="direction" type="gint"/>
+          <parameter name="new_index" type="gint*" owned="true" pass_as="out"/>
+          <parameter name="new_trailing" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="SetAlignment" cname="pango_layout_set_alignment">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="alignment" type="PangoAlignment"/>
+        </parameters>
+      </method>
+      <method name="SetAttributes" cname="pango_layout_set_attributes">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="attrs" type="PangoAttrList*" owned="true">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="SetAutoDir" cname="pango_layout_set_auto_dir">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="auto_dir" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="SetEllipsize" cname="pango_layout_set_ellipsize">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="ellipsize" type="PangoEllipsizeMode"/>
+        </parameters>
+      </method>
+      <method name="SetFontDescription" cname="pango_layout_set_font_description">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="desc" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="SetHeight" cname="pango_layout_set_height">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="height" type="gint"/>
+        </parameters>
+      </method>
+      <method name="SetIndent" cname="pango_layout_set_indent">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="indent" type="gint"/>
+        </parameters>
+      </method>
+      <method name="SetJustify" cname="pango_layout_set_justify">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="justify" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="SetMarkup" cname="pango_layout_set_markup">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="markup" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+        </parameters>
+      </method>
+      <method name="SetMarkupWithAccel" cname="pango_layout_set_markup_with_accel">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="markup" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="accel_marker" type="gunichar"/>
+          <parameter allow-none="1" name="accel_char" type="gunichar" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="SetSingleParagraphMode" cname="pango_layout_set_single_paragraph_mode">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="setting" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="SetSpacing" cname="pango_layout_set_spacing">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="spacing" type="gint"/>
+        </parameters>
+      </method>
+      <method name="SetTabs" cname="pango_layout_set_tabs">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="tabs" type="PangoTabArray*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="SetText" cname="pango_layout_set_text">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+        </parameters>
+      </method>
+      <method name="SetWidth" cname="pango_layout_set_width">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="width" type="gint"/>
+        </parameters>
+      </method>
+      <method name="SetWrap" cname="pango_layout_set_wrap">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="wrap" type="PangoWrapMode"/>
+        </parameters>
+      </method>
+      <method name="XyToIndex" cname="pango_layout_xy_to_index">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+          <parameter name="index_" type="gint*" owned="true" pass_as="out"/>
+          <parameter name="trailing" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+    </object>
+    <object name="Renderer" cname="PangoRenderer" abstract="true" opaque="false" hidden="false" parent="GObject">
+      <class_struct cname="PangoRendererClass">
+        <field cname="parent_class" access="private" writeable="false" readable="false" name="ParentClass" type="GObjectClass">
+          <warning>missing glib:type-name</warning>
+        </field>
+        <method vm="draw_glyphs"/>
+        <method vm="draw_rectangle"/>
+        <method vm="draw_error_underline"/>
+        <method vm="draw_shape"/>
+        <method vm="draw_trapezoid"/>
+        <method vm="draw_glyph"/>
+        <method vm="part_changed"/>
+        <method vm="begin"/>
+        <method vm="end"/>
+        <method vm="prepare_run"/>
+        <method vm="draw_glyph_item"/>
+        <method vm="_pango_reserved2"/>
+        <method vm="_pango_reserved3"/>
+        <method vm="_pango_reserved4"/>
+      </class_struct>
+      <virtual_method name="_pangoPangoReserved2" cname="_pango_reserved2" shared="true" hidden="true">
+        <return-type type="void"/>
+      </virtual_method>
+      <virtual_method name="_pangoPangoReserved3" cname="_pango_reserved3" shared="true" hidden="true">
+        <return-type type="void"/>
+      </virtual_method>
+      <virtual_method name="_pangoPangoReserved4" cname="_pango_reserved4" shared="true" hidden="true">
+        <return-type type="void"/>
+      </virtual_method>
+      <method name="GetType" cname="pango_renderer_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <virtual_method name="Begin" cname="begin">
+        <return-type type="void"/>
+        <parameters/>
+      </virtual_method>
+      <virtual_method name="DrawErrorUnderline" cname="draw_error_underline">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+          <parameter name="width" type="gint"/>
+          <parameter name="height" type="gint"/>
+        </parameters>
+      </virtual_method>
+      <virtual_method name="DrawGlyph" cname="draw_glyph">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="glyph" type="guint32"/>
+          <parameter name="x" type="gdouble"/>
+          <parameter name="y" type="gdouble"/>
+        </parameters>
+      </virtual_method>
+      <virtual_method name="DrawGlyphItem" cname="draw_glyph_item">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="text" type="const-gchar*"/>
+          <parameter name="glyph_item" type="PangoGlyphItem*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </virtual_method>
+      <virtual_method name="DrawGlyphs" cname="draw_glyphs">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="glyphs" type="PangoGlyphString*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </virtual_method>
+      <virtual_method name="DrawRectangle" cname="draw_rectangle">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="part" type="PangoRenderPart"/>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+          <parameter name="width" type="gint"/>
+          <parameter name="height" type="gint"/>
+        </parameters>
+      </virtual_method>
+      <virtual_method name="DrawShape" cname="draw_shape">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="attr" type="PangoAttrShape*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </virtual_method>
+      <virtual_method name="DrawTrapezoid" cname="draw_trapezoid">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="part" type="PangoRenderPart"/>
+          <parameter name="y1_" type="gdouble"/>
+          <parameter name="x11" type="gdouble"/>
+          <parameter name="x21" type="gdouble"/>
+          <parameter name="y2" type="gdouble"/>
+          <parameter name="x12" type="gdouble"/>
+          <parameter name="x22" type="gdouble"/>
+        </parameters>
+      </virtual_method>
+      <virtual_method name="End" cname="end">
+        <return-type type="void"/>
+        <parameters/>
+      </virtual_method>
+      <virtual_method name="PartChanged" cname="part_changed">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="part" type="PangoRenderPart"/>
+        </parameters>
+      </virtual_method>
+      <virtual_method name="PrepareRun" cname="prepare_run">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="run" type="PangoGlyphItem"/>
+        </parameters>
+      </virtual_method>
+      <method name="Activate" cname="pango_renderer_activate">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="Deactivate" cname="pango_renderer_deactivate">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="DrawErrorUnderline" cname="pango_renderer_draw_error_underline">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+          <parameter name="width" type="gint"/>
+          <parameter name="height" type="gint"/>
+        </parameters>
+      </method>
+      <method name="DrawGlyph" cname="pango_renderer_draw_glyph">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="glyph" type="guint32"/>
+          <parameter name="x" type="gdouble"/>
+          <parameter name="y" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="DrawGlyphItem" cname="pango_renderer_draw_glyph_item">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="text" type="const-gchar*"/>
+          <parameter name="glyph_item" type="PangoGlyphItem*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="DrawGlyphs" cname="pango_renderer_draw_glyphs">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="glyphs" type="PangoGlyphString*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="DrawLayout" cname="pango_renderer_draw_layout">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="layout" type="PangoLayout*"/>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="DrawLayoutLine" cname="pango_renderer_draw_layout_line">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="line" type="PangoLayoutLine*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="DrawRectangle" cname="pango_renderer_draw_rectangle">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="part" type="PangoRenderPart"/>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+          <parameter name="width" type="gint"/>
+          <parameter name="height" type="gint"/>
+        </parameters>
+      </method>
+      <method name="DrawTrapezoid" cname="pango_renderer_draw_trapezoid">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="part" type="PangoRenderPart"/>
+          <parameter name="y1_" type="gdouble"/>
+          <parameter name="x11" type="gdouble"/>
+          <parameter name="x21" type="gdouble"/>
+          <parameter name="y2" type="gdouble"/>
+          <parameter name="x12" type="gdouble"/>
+          <parameter name="x22" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="GetColor" cname="pango_renderer_get_color">
+        <return-type type="PangoColor*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="part" type="PangoRenderPart"/>
+        </parameters>
+      </method>
+      <method name="GetLayout" cname="pango_renderer_get_layout">
+        <return-type type="PangoLayout*"/>
+        <parameters/>
+      </method>
+      <method name="GetLayoutLine" cname="pango_renderer_get_layout_line">
+        <return-type type="PangoLayoutLine*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetMatrix" cname="pango_renderer_get_matrix">
+        <return-type type="PangoMatrix*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="PartChanged" cname="pango_renderer_part_changed">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="part" type="PangoRenderPart"/>
+        </parameters>
+      </method>
+      <method name="SetColor" cname="pango_renderer_set_color">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="part" type="PangoRenderPart"/>
+          <parameter allow-none="1" name="color" type="PangoColor*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="SetMatrix" cname="pango_renderer_set_matrix">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="matrix" type="PangoMatrix*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <field cname="parent_instance" access="private" writeable="false" readable="false" name="ParentInstance" type="GObject*"/>
+      <field cname="underline" access="private" writeable="false" readable="false" name="Underline" type="PangoUnderline"/>
+      <field cname="strikethrough" access="private" writeable="false" readable="false" name="Strikethrough" type="gboolean"/>
+      <field cname="active_count" access="private" writeable="false" readable="false" name="ActiveCount" type="gint"/>
+      <field cname="matrix" access="public" writeable="false" readable="true" name="Matrix" type="PangoMatrix*">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="priv" access="private" writeable="false" readable="false" name="Priv" type="PangoRendererPrivate*">
+        <warning>missing glib:type-name</warning>
+      </field>
+    </object>
+    <struct name="Analysis" cname="PangoAnalysis" opaque="false" hidden="false">
+      <field cname="shape_engine" access="public" writeable="true" readable="true" name="ShapeEngine" type="PangoEngineShape*">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="lang_engine" access="public" writeable="true" readable="true" name="LangEngine" type="PangoEngineLang*">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="font" access="public" writeable="true" readable="true" name="Font" type="PangoFont*"/>
+      <field cname="level" access="public" writeable="true" readable="true" name="Level" type="guint8"/>
+      <field cname="gravity" access="public" writeable="true" readable="true" name="Gravity" type="guint8"/>
+      <field cname="flags" access="public" writeable="true" readable="true" name="Flags" type="guint8"/>
+      <field cname="script" access="public" writeable="true" readable="true" name="Script" type="guint8"/>
+      <field cname="language" access="public" writeable="true" readable="true" name="Language" type="PangoLanguage*">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="extra_attrs" access="public" writeable="true" readable="true" name="ExtraAttrs" type="GSList*" element_type="gpointer"/>
+    </struct>
+    <struct name="AttrClass" cname="PangoAttrClass" opaque="false" hidden="false">
+      <field cname="type" access="public" writeable="true" readable="true" name="Type" type="PangoAttrType"/>
+    </struct>
+    <struct name="AttrColor" cname="PangoAttrColor" opaque="false" hidden="false">
+      <field cname="attr" access="public" writeable="true" readable="true" name="Attr" type="PangoAttribute">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="color" access="public" writeable="true" readable="true" name="Color" type="PangoColor">
+        <warning>missing glib:type-name</warning>
+      </field>
+    </struct>
+    <struct name="AttrFloat" cname="PangoAttrFloat" opaque="false" hidden="false">
+      <field cname="attr" access="public" writeable="true" readable="true" name="Attr" type="PangoAttribute">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="value" access="public" writeable="true" readable="true" name="Value" type="gdouble"/>
+    </struct>
+    <struct name="AttrFontDesc" cname="PangoAttrFontDesc" opaque="false" hidden="false">
+      <field cname="attr" access="public" writeable="true" readable="true" name="Attr" type="PangoAttribute">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="desc" access="public" writeable="true" readable="true" name="Desc" type="PangoFontDescription*">
+        <warning>missing glib:type-name</warning>
+      </field>
+    </struct>
+    <struct name="AttrInt" cname="PangoAttrInt" opaque="false" hidden="false">
+      <field cname="attr" access="public" writeable="true" readable="true" name="Attr" type="PangoAttribute">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="value" access="public" writeable="true" readable="true" name="Value" type="gint"/>
+    </struct>
+    <struct name="AttrIterator" cname="PangoAttrIterator" opaque="true" hidden="false">
+      <method name="Destroy" cname="pango_attr_iterator_destroy">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="GetAttrs" cname="pango_attr_iterator_get_attrs">
+        <return-type type="GSList*" element_type="GSList*" elements_owned="true" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetFont" cname="pango_attr_iterator_get_font">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="desc" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="language" type="PangoLanguage**">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="extra_attrs" type="GSList**" element_type="GSList**" elements_owned="true" owned="true">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Next" cname="pango_attr_iterator_next">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="Range" cname="pango_attr_iterator_range">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="start" type="gint*" owned="true" pass_as="out"/>
+          <parameter name="end" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+    </struct>
+    <struct name="AttrLanguage" cname="PangoAttrLanguage" opaque="false" hidden="false">
+      <field cname="attr" access="public" writeable="true" readable="true" name="Attr" type="PangoAttribute">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="value" access="public" writeable="true" readable="true" name="Value" type="PangoLanguage*">
+        <warning>missing glib:type-name</warning>
+      </field>
+    </struct>
+    <boxed name="AttrList" cname="PangoAttrList" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_attr_list_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <constructor cname="pango_attr_list_new" disable_void_ctor=""/>
+      <method name="Change" cname="pango_attr_list_change">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="attr" type="PangoAttribute*" owned="true">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Copy" cname="pango_attr_list_copy">
+        <return-type type="PangoAttrList*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Filter" cname="pango_attr_list_filter">
+        <return-type type="PangoAttrList*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter closure="1" scope="call" name="func" type="PangoAttrFilterFunc"/>
+          <parameter name="data" type="gpointer"/>
+        </parameters>
+      </method>
+      <method name="Insert" cname="pango_attr_list_insert">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="attr" type="PangoAttribute*" owned="true">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="InsertBefore" cname="pango_attr_list_insert_before">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="attr" type="PangoAttribute*" owned="true">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Ref" cname="pango_attr_list_ref">
+        <return-type type="PangoAttrList*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Splice" cname="pango_attr_list_splice">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="other" type="PangoAttrList*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="pos" type="gint"/>
+          <parameter name="len" type="gint"/>
+        </parameters>
+      </method>
+      <method name="Unref" cname="pango_attr_list_unref">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+    </boxed>
+    <struct name="AttrShape" cname="PangoAttrShape" opaque="false" hidden="false">
+      <field cname="attr" access="public" writeable="true" readable="true" name="Attr" type="PangoAttribute">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="ink_rect" access="public" writeable="true" readable="true" name="InkRect" type="PangoRectangle">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="logical_rect" access="public" writeable="true" readable="true" name="LogicalRect" type="PangoRectangle">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="data" access="public" writeable="true" readable="true" name="Data" type="gpointer"/>
+      <field cname="copy_func" access="public" writeable="true" readable="true" name="CopyFunc" type="PangoAttrDataCopyFunc"/>
+      <field cname="destroy_func" access="public" writeable="true" readable="true" name="DestroyFunc" type="GDestroyNotify"/>
+    </struct>
+    <struct name="AttrSize" cname="PangoAttrSize" opaque="false" hidden="false">
+      <field cname="attr" access="public" writeable="true" readable="true" name="Attr" type="PangoAttribute">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="size" access="public" writeable="true" readable="true" name="Size" type="gint"/>
+      <field cname="absolute" access="public" writeable="true" readable="true" bits="1" name="Absolute" type="guint"/>
+    </struct>
+    <struct name="AttrString" cname="PangoAttrString" opaque="false" hidden="false">
+      <field cname="attr" access="public" writeable="true" readable="true" name="Attr" type="PangoAttribute">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="value" access="public" writeable="true" readable="true" name="Value" type="gchar*"/>
+    </struct>
+    <struct name="Attribute" cname="PangoAttribute" opaque="false" hidden="false">
+      <field cname="klass" access="public" writeable="true" readable="true" name="Klass" type="PangoAttrClass*">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="start_index" access="public" writeable="true" readable="true" name="StartIndex" type="guint"/>
+      <field cname="end_index" access="public" writeable="true" readable="true" name="EndIndex" type="guint"/>
+      <method name="Destroy" cname="pango_attribute_destroy">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="Equal" cname="pango_attribute_equal">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="attr2" type="PangoAttribute*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Init" cname="pango_attribute_init">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="klass" type="PangoAttrClass*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+    </struct>
+    <boxed name="Color" cname="PangoColor" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_color_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <field cname="red" access="public" writeable="true" readable="true" name="Red" type="guint16"/>
+      <field cname="green" access="public" writeable="true" readable="true" name="Green" type="guint16"/>
+      <field cname="blue" access="public" writeable="true" readable="true" name="Blue" type="guint16"/>
+      <method name="Copy" cname="pango_color_copy">
+        <return-type type="PangoColor*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Free" cname="pango_color_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="Parse" cname="pango_color_parse">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="spec" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="ToString" cname="pango_color_to_string">
+        <return-type type="gchar*" owned="true"/>
+        <parameters/>
+      </method>
+    </boxed>
+    <struct name="Coverage" cname="PangoCoverage" opaque="true" hidden="false">
+      <method name="Get" cname="pango_coverage_get">
+        <return-type type="PangoCoverageLevel"/>
+        <parameters>
+          <parameter name="index_" type="gint"/>
+        </parameters>
+      </method>
+      <method name="Max" cname="pango_coverage_max">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="other" type="PangoCoverage*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Set" cname="pango_coverage_set">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="index_" type="gint"/>
+          <parameter name="level" type="PangoCoverageLevel"/>
+        </parameters>
+      </method>
+      <method name="ToBytes" cname="pango_coverage_to_bytes">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="bytes" type="guchar***" owned="true" pass_as="out" array="true" array_length_param_index="1"/>
+          <parameter name="n_bytes" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="Unref" cname="pango_coverage_unref">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+    </struct>
+    <struct name="EngineLang" cname="PangoEngineLang" opaque="true" hidden="false"/>
+    <struct name="EngineShape" cname="PangoEngineShape" opaque="true" hidden="false"/>
+    <boxed name="FontDescription" cname="PangoFontDescription" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_font_description_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <constructor cname="pango_font_description_new" disable_void_ctor=""/>
+      <method name="BetterMatch" cname="pango_font_description_better_match">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter allow-none="1" name="old_match" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="new_match" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Copy" cname="pango_font_description_copy">
+        <return-type type="PangoFontDescription*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="CopyStatic" cname="pango_font_description_copy_static">
+        <return-type type="PangoFontDescription*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Equal" cname="pango_font_description_equal">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="desc2" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Free" cname="pango_font_description_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="GetFamily" cname="pango_font_description_get_family">
+        <return-type type="const-gchar*"/>
+        <parameters/>
+      </method>
+      <method name="GetGravity" cname="pango_font_description_get_gravity">
+        <return-type type="PangoGravity"/>
+        <parameters/>
+      </method>
+      <method name="GetSetFields" cname="pango_font_description_get_set_fields">
+        <return-type type="PangoFontMask"/>
+        <parameters/>
+      </method>
+      <method name="GetSize" cname="pango_font_description_get_size">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetSizeIsAbsolute" cname="pango_font_description_get_size_is_absolute">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="GetStretch" cname="pango_font_description_get_stretch">
+        <return-type type="PangoStretch"/>
+        <parameters/>
+      </method>
+      <method name="GetStyle" cname="pango_font_description_get_style">
+        <return-type type="PangoStyle"/>
+        <parameters/>
+      </method>
+      <method name="GetVariant" cname="pango_font_description_get_variant">
+        <return-type type="PangoVariant"/>
+        <parameters/>
+      </method>
+      <method name="GetWeight" cname="pango_font_description_get_weight">
+        <return-type type="PangoWeight"/>
+        <parameters/>
+      </method>
+      <method name="Hash" cname="pango_font_description_hash">
+        <return-type type="guint"/>
+        <parameters/>
+      </method>
+      <method name="Merge" cname="pango_font_description_merge">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="desc_to_merge" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="replace_existing" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="MergeStatic" cname="pango_font_description_merge_static">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="desc_to_merge" type="PangoFontDescription*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="replace_existing" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="SetAbsoluteSize" cname="pango_font_description_set_absolute_size">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="size" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="SetFamily" cname="pango_font_description_set_family">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="family" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="SetFamilyStatic" cname="pango_font_description_set_family_static">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="family" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="SetGravity" cname="pango_font_description_set_gravity">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="gravity" type="PangoGravity"/>
+        </parameters>
+      </method>
+      <method name="SetSize" cname="pango_font_description_set_size">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="size" type="gint"/>
+        </parameters>
+      </method>
+      <method name="SetStretch" cname="pango_font_description_set_stretch">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="stretch" type="PangoStretch"/>
+        </parameters>
+      </method>
+      <method name="SetStyle" cname="pango_font_description_set_style">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="style" type="PangoStyle"/>
+        </parameters>
+      </method>
+      <method name="SetVariant" cname="pango_font_description_set_variant">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="variant" type="PangoVariant"/>
+        </parameters>
+      </method>
+      <method name="SetWeight" cname="pango_font_description_set_weight">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="weight" type="PangoWeight"/>
+        </parameters>
+      </method>
+      <method name="ToFilename" cname="pango_font_description_to_filename">
+        <return-type type="gchar*" owned="true"/>
+        <parameters/>
+      </method>
+      <method name="ToString" cname="pango_font_description_to_string">
+        <return-type type="gchar*" owned="true"/>
+        <parameters/>
+      </method>
+      <method name="UnsetFields" cname="pango_font_description_unset_fields">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="to_unset" type="PangoFontMask"/>
+        </parameters>
+      </method>
+      <method name="FromString" cname="pango_font_description_from_string" shared="true">
+        <return-type type="PangoFontDescription*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="str" type="const-gchar*"/>
+        </parameters>
+      </method>
+    </boxed>
+    <boxed name="FontMetrics" cname="PangoFontMetrics" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_font_metrics_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="GetApproximateCharWidth" cname="pango_font_metrics_get_approximate_char_width">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetApproximateDigitWidth" cname="pango_font_metrics_get_approximate_digit_width">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetAscent" cname="pango_font_metrics_get_ascent">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetDescent" cname="pango_font_metrics_get_descent">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetStrikethroughPosition" cname="pango_font_metrics_get_strikethrough_position">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetStrikethroughThickness" cname="pango_font_metrics_get_strikethrough_thickness">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetUnderlinePosition" cname="pango_font_metrics_get_underline_position">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetUnderlineThickness" cname="pango_font_metrics_get_underline_thickness">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="Ref" cname="pango_font_metrics_ref">
+        <return-type type="PangoFontMetrics*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Unref" cname="pango_font_metrics_unref">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+    </boxed>
+    <struct name="GlyphGeometry" cname="PangoGlyphGeometry" opaque="false" hidden="false">
+      <field cname="width" access="public" writeable="true" readable="true" name="Width" type="gint32"/>
+      <field cname="x_offset" access="public" writeable="true" readable="true" name="XOffset" type="gint32"/>
+      <field cname="y_offset" access="public" writeable="true" readable="true" name="YOffset" type="gint32"/>
+    </struct>
+    <struct name="GlyphInfo" cname="PangoGlyphInfo" opaque="false" hidden="false">
+      <field cname="glyph" access="public" writeable="true" readable="true" name="Glyph" type="guint32"/>
+      <field cname="geometry" access="public" writeable="true" readable="true" name="Geometry" type="PangoGlyphGeometry">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="attr" access="public" writeable="true" readable="true" name="Attr" type="PangoGlyphVisAttr">
+        <warning>missing glib:type-name</warning>
+      </field>
+    </struct>
+    <boxed name="GlyphItem" cname="PangoGlyphItem" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_glyph_item_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <field cname="item" access="public" writeable="true" readable="true" name="Item" type="PangoItem*">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="glyphs" access="public" writeable="true" readable="true" name="Glyphs" type="PangoGlyphString*">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <method name="ApplyAttrs" cname="pango_glyph_item_apply_attrs">
+        <return-type type="GSList*" element_type="GSList*" elements_owned="true" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="list" type="PangoAttrList*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Copy" cname="pango_glyph_item_copy">
+        <return-type type="PangoGlyphItem*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Free" cname="pango_glyph_item_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="GetLogicalWidths" cname="pango_glyph_item_get_logical_widths">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="logical_widths" type="int*" array="true"/>
+        </parameters>
+      </method>
+      <method name="LetterSpace" cname="pango_glyph_item_letter_space">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="log_attrs" type="PangoLogAttr*" array="true"/>
+          <parameter name="letter_spacing" type="gint"/>
+        </parameters>
+      </method>
+      <method name="Split" cname="pango_glyph_item_split">
+        <return-type type="PangoGlyphItem*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="split_index" type="gint"/>
+        </parameters>
+      </method>
+    </boxed>
+    <boxed name="GlyphItemIter" cname="PangoGlyphItemIter" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_glyph_item_iter_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <field cname="glyph_item" access="public" writeable="true" readable="true" name="GlyphItem" type="PangoGlyphItem*">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="text" access="public" writeable="true" readable="true" name="Text" type="gchar*"/>
+      <field cname="start_glyph" access="public" writeable="true" readable="true" name="StartGlyph" type="gint"/>
+      <field cname="start_index" access="public" writeable="true" readable="true" name="StartIndex" type="gint"/>
+      <field cname="start_char" access="public" writeable="true" readable="true" name="StartChar" type="gint"/>
+      <field cname="end_glyph" access="public" writeable="true" readable="true" name="EndGlyph" type="gint"/>
+      <field cname="end_index" access="public" writeable="true" readable="true" name="EndIndex" type="gint"/>
+      <field cname="end_char" access="public" writeable="true" readable="true" name="EndChar" type="gint"/>
+      <method name="Copy" cname="pango_glyph_item_iter_copy">
+        <return-type type="PangoGlyphItemIter*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Free" cname="pango_glyph_item_iter_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="InitEnd" cname="pango_glyph_item_iter_init_end">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="glyph_item" type="PangoGlyphItem*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="text" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="InitStart" cname="pango_glyph_item_iter_init_start">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="glyph_item" type="PangoGlyphItem*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="text" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="NextCluster" cname="pango_glyph_item_iter_next_cluster">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="PrevCluster" cname="pango_glyph_item_iter_prev_cluster">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+    </boxed>
+    <boxed name="GlyphString" cname="PangoGlyphString" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_glyph_string_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <field cname="num_glyphs" access="public" writeable="true" readable="true" name="NumGlyphs" type="gint"/>
+      <field cname="glyphs" access="public" writeable="true" readable="true" name="Glyphs" type="PangoGlyphInfo*">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <field cname="log_clusters" access="public" writeable="true" readable="true" name="LogClusters" type="gint"/>
+      <field cname="space" access="private" writeable="false" readable="false" name="Space" type="gint"/>
+      <constructor cname="pango_glyph_string_new" disable_void_ctor=""/>
+      <method name="Copy" cname="pango_glyph_string_copy">
+        <return-type type="PangoGlyphString*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Extents" cname="pango_glyph_string_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ExtentsRange" cname="pango_glyph_string_extents_range">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="start" type="gint"/>
+          <parameter name="end" type="gint"/>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Free" cname="pango_glyph_string_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="GetLogicalWidths" cname="pango_glyph_string_get_logical_widths">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="embedding_level" type="gint"/>
+          <parameter name="logical_widths" type="int*" array="true"/>
+        </parameters>
+      </method>
+      <method name="GetWidth" cname="pango_glyph_string_get_width">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="IndexToX" cname="pango_glyph_string_index_to_x">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="analysis" type="PangoAnalysis*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="index_" type="gint"/>
+          <parameter name="trailing" type="gboolean"/>
+          <parameter name="x_pos" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="SetSize" cname="pango_glyph_string_set_size">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="new_len" type="gint"/>
+        </parameters>
+      </method>
+      <method name="XToIndex" cname="pango_glyph_string_x_to_index">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="analysis" type="PangoAnalysis*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x_pos" type="gint"/>
+          <parameter name="index_" type="gint*" owned="true" pass_as="out"/>
+          <parameter name="trailing" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+    </boxed>
+    <struct name="GlyphVisAttr" cname="PangoGlyphVisAttr" opaque="false" hidden="false">
+      <field cname="is_cluster_start" access="public" writeable="true" readable="true" bits="1" name="IsClusterStart" type="guint"/>
+    </struct>
+    <boxed name="Item" cname="PangoItem" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_item_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <field cname="offset" access="public" writeable="true" readable="true" name="Offset" type="gint"/>
+      <field cname="length" access="public" writeable="true" readable="true" name="Length" type="gint"/>
+      <field cname="num_chars" access="public" writeable="true" readable="true" name="NumChars" type="gint"/>
+      <field cname="analysis" access="public" writeable="true" readable="true" name="Analysis" type="PangoAnalysis">
+        <warning>missing glib:type-name</warning>
+      </field>
+      <constructor cname="pango_item_new" disable_void_ctor=""/>
+      <method name="Copy" cname="pango_item_copy">
+        <return-type type="PangoItem*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Free" cname="pango_item_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="Split" cname="pango_item_split">
+        <return-type type="PangoItem*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="split_index" type="gint"/>
+          <parameter name="split_offset" type="gint"/>
+        </parameters>
+      </method>
+    </boxed>
+    <boxed name="Language" cname="PangoLanguage" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_language_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="GetSampleString" cname="pango_language_get_sample_string">
+        <return-type type="const-gchar*"/>
+        <parameters/>
+      </method>
+      <method name="GetScripts" cname="pango_language_get_scripts">
+        <return-type type="PangoScript*" array="true" array_length_param_index="0"/>
+        <parameters>
+          <parameter allow-none="1" name="num_scripts" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="IncludesScript" cname="pango_language_includes_script">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="script" type="PangoScript"/>
+        </parameters>
+      </method>
+      <method name="Matches" cname="pango_language_matches">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="range_list" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="ToString" cname="pango_language_to_string">
+        <return-type type="const-gchar*"/>
+        <parameters/>
+      </method>
+      <method name="FromString" cname="pango_language_from_string" shared="true">
+        <return-type type="PangoLanguage*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter allow-none="1" name="language" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="GetDefault" cname="pango_language_get_default" shared="true">
+        <return-type type="PangoLanguage*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+      </method>
+    </boxed>
+    <boxed name="LayoutIter" cname="PangoLayoutIter" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_layout_iter_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="AtLastLine" cname="pango_layout_iter_at_last_line">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="Copy" cname="pango_layout_iter_copy">
+        <return-type type="PangoLayoutIter*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Free" cname="pango_layout_iter_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="GetBaseline" cname="pango_layout_iter_get_baseline">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetCharExtents" cname="pango_layout_iter_get_char_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetClusterExtents" cname="pango_layout_iter_get_cluster_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetIndex" cname="pango_layout_iter_get_index">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetLayout" cname="pango_layout_iter_get_layout">
+        <return-type type="PangoLayout*"/>
+        <parameters/>
+      </method>
+      <method name="GetLayoutExtents" cname="pango_layout_iter_get_layout_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetLine" cname="pango_layout_iter_get_line">
+        <return-type type="PangoLayoutLine*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetLineExtents" cname="pango_layout_iter_get_line_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetLineReadonly" cname="pango_layout_iter_get_line_readonly">
+        <return-type type="PangoLayoutLine*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetLineYrange" cname="pango_layout_iter_get_line_yrange">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="y0_" type="gint*" owned="true" pass_as="out"/>
+          <parameter allow-none="1" name="y1_" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="GetRun" cname="pango_layout_iter_get_run">
+        <return-type type="PangoGlyphItem"/>
+        <parameters/>
+      </method>
+      <method name="GetRunExtents" cname="pango_layout_iter_get_run_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetRunReadonly" cname="pango_layout_iter_get_run_readonly">
+        <return-type type="PangoGlyphItem"/>
+        <parameters/>
+      </method>
+      <method name="NextChar" cname="pango_layout_iter_next_char">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="NextCluster" cname="pango_layout_iter_next_cluster">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="NextLine" cname="pango_layout_iter_next_line">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="NextRun" cname="pango_layout_iter_next_run">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+    </boxed>
+    <boxed name="LayoutLine" cname="PangoLayoutLine" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_layout_line_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <field cname="layout" access="public" writeable="true" readable="true" name="Layout" type="PangoLayout*"/>
+      <field cname="start_index" access="public" writeable="true" readable="true" name="StartIndex" type="gint"/>
+      <field cname="length" access="public" writeable="true" readable="true" name="Length" type="gint"/>
+      <field cname="runs" access="public" writeable="true" readable="true" name="Runs" type="GSList*" element_type="gpointer"/>
+      <field cname="is_paragraph_start" access="public" writeable="true" readable="true" bits="1" name="IsParagraphStart" type="guint"/>
+      <field cname="resolved_dir" access="public" writeable="true" readable="true" bits="3" name="ResolvedDir" type="guint"/>
+      <method name="GetExtents" cname="pango_layout_line_get_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetPixelExtents" cname="pango_layout_line_get_pixel_extents">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="ink_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="logical_rect" type="PangoRectangle*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetXRanges" cname="pango_layout_line_get_x_ranges">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="start_index" type="gint"/>
+          <parameter name="end_index" type="gint"/>
+          <parameter name="ranges" type="int***" owned="true" pass_as="out" array="true" array_length_param_index="3"/>
+          <parameter name="n_ranges" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="IndexToX" cname="pango_layout_line_index_to_x">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="index_" type="gint"/>
+          <parameter name="trailing" type="gboolean"/>
+          <parameter name="x_pos" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="Ref" cname="pango_layout_line_ref">
+        <return-type type="PangoLayoutLine*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Unref" cname="pango_layout_line_unref">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="XToIndex" cname="pango_layout_line_x_to_index">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="x_pos" type="gint"/>
+          <parameter name="index_" type="gint*" owned="true" pass_as="out"/>
+          <parameter name="trailing" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+    </boxed>
+    <struct name="LogAttr" cname="PangoLogAttr" opaque="false" hidden="false">
+      <field cname="is_line_break" access="public" writeable="true" readable="true" bits="1" name="IsLineBreak" type="guint"/>
+      <field cname="is_mandatory_break" access="public" writeable="true" readable="true" bits="1" name="IsMandatoryBreak" type="guint"/>
+      <field cname="is_char_break" access="public" writeable="true" readable="true" bits="1" name="IsCharBreak" type="guint"/>
+      <field cname="is_white" access="public" writeable="true" readable="true" bits="1" name="IsWhite" type="guint"/>
+      <field cname="is_cursor_position" access="public" writeable="true" readable="true" bits="1" name="IsCursorPosition" type="guint"/>
+      <field cname="is_word_start" access="public" writeable="true" readable="true" bits="1" name="IsWordStart" type="guint"/>
+      <field cname="is_word_end" access="public" writeable="true" readable="true" bits="1" name="IsWordEnd" type="guint"/>
+      <field cname="is_sentence_boundary" access="public" writeable="true" readable="true" bits="1" name="IsSentenceBoundary" type="guint"/>
+      <field cname="is_sentence_start" access="public" writeable="true" readable="true" bits="1" name="IsSentenceStart" type="guint"/>
+      <field cname="is_sentence_end" access="public" writeable="true" readable="true" bits="1" name="IsSentenceEnd" type="guint"/>
+      <field cname="backspace_deletes_character" access="public" writeable="true" readable="true" bits="1" name="BackspaceDeletesCharacter" type="guint"/>
+      <field cname="is_expandable_space" access="public" writeable="true" readable="true" bits="1" name="IsExpandableSpace" type="guint"/>
+      <field cname="is_word_boundary" access="public" writeable="true" readable="true" bits="1" name="IsWordBoundary" type="guint"/>
+    </struct>
+    <boxed name="Matrix" cname="PangoMatrix" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_matrix_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <field cname="xx" access="public" writeable="true" readable="true" name="Xx" type="gdouble"/>
+      <field cname="xy" access="public" writeable="true" readable="true" name="Xy" type="gdouble"/>
+      <field cname="yx" access="public" writeable="true" readable="true" name="Yx" type="gdouble"/>
+      <field cname="yy" access="public" writeable="true" readable="true" name="Yy" type="gdouble"/>
+      <field cname="x0" access="public" writeable="true" readable="true" name="X0" type="gdouble"/>
+      <field cname="y0" access="public" writeable="true" readable="true" name="Y0" type="gdouble"/>
+      <method name="Concat" cname="pango_matrix_concat">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="new_matrix" type="PangoMatrix*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Copy" cname="pango_matrix_copy">
+        <return-type type="PangoMatrix*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Free" cname="pango_matrix_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="GetFontScaleFactor" cname="pango_matrix_get_font_scale_factor">
+        <return-type type="gdouble"/>
+        <parameters/>
+      </method>
+      <method name="Rotate" cname="pango_matrix_rotate">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="degrees" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="Scale" cname="pango_matrix_scale">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="scale_x" type="gdouble"/>
+          <parameter name="scale_y" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="TransformDistance" cname="pango_matrix_transform_distance">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="dx" type="gdouble*" owned="true" pass_as="ref"/>
+          <parameter name="dy" type="gdouble*" owned="true" pass_as="ref"/>
+        </parameters>
+      </method>
+      <method name="TransformPixelRectangle" cname="pango_matrix_transform_pixel_rectangle">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="rect" type="PangoRectangle*" owned="true" pass_as="ref">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="TransformPoint" cname="pango_matrix_transform_point">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="x" type="gdouble*" owned="true" pass_as="ref"/>
+          <parameter name="y" type="gdouble*" owned="true" pass_as="ref"/>
+        </parameters>
+      </method>
+      <method name="TransformRectangle" cname="pango_matrix_transform_rectangle">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="rect" type="PangoRectangle*" owned="true" pass_as="ref">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="Translate" cname="pango_matrix_translate">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="tx" type="gdouble"/>
+          <parameter name="ty" type="gdouble"/>
+        </parameters>
+      </method>
+    </boxed>
+    <struct name="Rectangle" cname="PangoRectangle" opaque="false" hidden="false">
+      <field cname="x" access="public" writeable="true" readable="true" name="X" type="gint"/>
+      <field cname="y" access="public" writeable="true" readable="true" name="Y" type="gint"/>
+      <field cname="width" access="public" writeable="true" readable="true" name="Width" type="gint"/>
+      <field cname="height" access="public" writeable="true" readable="true" name="Height" type="gint"/>
+    </struct>
+    <struct name="RendererPrivate" cname="PangoRendererPrivate" opaque="true" hidden="true"/>
+    <struct name="ScriptIter" cname="PangoScriptIter" opaque="true" hidden="false">
+      <method name="Free" cname="pango_script_iter_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="GetRange" cname="pango_script_iter_get_range">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="start" type="gchar*" owned="true" pass_as="out"/>
+          <parameter allow-none="1" name="end" type="gchar*" owned="true" pass_as="out"/>
+          <parameter allow-none="1" name="script" type="PangoScript" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="Next" cname="pango_script_iter_next">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+    </struct>
+    <boxed name="TabArray" cname="PangoTabArray" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_tab_array_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <constructor cname="pango_tab_array_new">
+        <parameters>
+          <parameter name="initial_size" type="gint"/>
+          <parameter name="positions_in_pixels" type="gboolean"/>
+        </parameters>
+      </constructor>
+      <method name="Copy" cname="pango_tab_array_copy">
+        <return-type type="PangoTabArray*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="Free" cname="pango_tab_array_free">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="GetPositionsInPixels" cname="pango_tab_array_get_positions_in_pixels">
+        <return-type type="gboolean"/>
+        <parameters/>
+      </method>
+      <method name="GetSize" cname="pango_tab_array_get_size">
+        <return-type type="gint"/>
+        <parameters/>
+      </method>
+      <method name="GetTab" cname="pango_tab_array_get_tab">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="tab_index" type="gint"/>
+          <parameter allow-none="1" name="alignment" type="PangoTabAlign" owned="true" pass_as="out"/>
+          <parameter allow-none="1" name="location" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="GetTabs" cname="pango_tab_array_get_tabs">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="alignments" type="PangoTabAlign" owned="true" pass_as="out"/>
+          <parameter allow-none="1" name="locations" type="gint***" owned="true" pass_as="out" array="true"/>
+        </parameters>
+      </method>
+      <method name="Resize" cname="pango_tab_array_resize">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="new_size" type="gint"/>
+        </parameters>
+      </method>
+      <method name="SetTab" cname="pango_tab_array_set_tab">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="tab_index" type="gint"/>
+          <parameter name="alignment" type="PangoTabAlign"/>
+          <parameter name="location" type="gint"/>
+        </parameters>
+      </method>
+    </boxed>
+    <struct name="_ScriptForLang" cname="_PangoScriptForLang" opaque="false" hidden="false">
+      <field cname="lang" access="public" writeable="true" readable="true" name="Lang" type="const char" array="true" array_len="7"/>
+      <field cname="scripts" access="public" writeable="true" readable="true" name="Scripts" type="PangoScript" array="true" array_len="3"/>
+    </struct>
+    <object name="Global" cname="PangoGlobal" opaque="true">
+      <method name="AttrBackgroundNew" cname="pango_attr_background_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="red" type="guint16"/>
+          <parameter name="green" type="guint16"/>
+          <parameter name="blue" type="guint16"/>
+        </parameters>
+      </method>
+      <method name="AttrFallbackNew" cname="pango_attr_fallback_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="enable_fallback" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="AttrFamilyNew" cname="pango_attr_family_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="family" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="AttrForegroundNew" cname="pango_attr_foreground_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="red" type="guint16"/>
+          <parameter name="green" type="guint16"/>
+          <parameter name="blue" type="guint16"/>
+        </parameters>
+      </method>
+      <method name="AttrGravityHintNew" cname="pango_attr_gravity_hint_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="hint" type="PangoGravityHint"/>
+        </parameters>
+      </method>
+      <method name="AttrGravityNew" cname="pango_attr_gravity_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="gravity" type="PangoGravity"/>
+        </parameters>
+      </method>
+      <method name="AttrLetterSpacingNew" cname="pango_attr_letter_spacing_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="letter_spacing" type="gint"/>
+        </parameters>
+      </method>
+      <method name="AttrRiseNew" cname="pango_attr_rise_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="rise" type="gint"/>
+        </parameters>
+      </method>
+      <method name="AttrScaleNew" cname="pango_attr_scale_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="scale_factor" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="AttrStretchNew" cname="pango_attr_stretch_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="stretch" type="PangoStretch"/>
+        </parameters>
+      </method>
+      <method name="AttrStrikethroughColorNew" cname="pango_attr_strikethrough_color_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="red" type="guint16"/>
+          <parameter name="green" type="guint16"/>
+          <parameter name="blue" type="guint16"/>
+        </parameters>
+      </method>
+      <method name="AttrStrikethroughNew" cname="pango_attr_strikethrough_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="strikethrough" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="AttrStyleNew" cname="pango_attr_style_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="style" type="PangoStyle"/>
+        </parameters>
+      </method>
+      <method name="AttrTypeGetName" cname="pango_attr_type_get_name" shared="true">
+        <return-type type="const-gchar*"/>
+        <parameters>
+          <parameter name="type" type="PangoAttrType"/>
+        </parameters>
+      </method>
+      <method name="AttrTypeRegister" cname="pango_attr_type_register" shared="true">
+        <return-type type="PangoAttrType"/>
+        <parameters>
+          <parameter name="name" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="AttrUnderlineColorNew" cname="pango_attr_underline_color_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="red" type="guint16"/>
+          <parameter name="green" type="guint16"/>
+          <parameter name="blue" type="guint16"/>
+        </parameters>
+      </method>
+      <method name="AttrUnderlineNew" cname="pango_attr_underline_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="underline" type="PangoUnderline"/>
+        </parameters>
+      </method>
+      <method name="AttrVariantNew" cname="pango_attr_variant_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="variant" type="PangoVariant"/>
+        </parameters>
+      </method>
+      <method name="AttrWeightNew" cname="pango_attr_weight_new" shared="true">
+        <return-type type="PangoAttribute*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="weight" type="PangoWeight"/>
+        </parameters>
+      </method>
+      <method name="BidiTypeForUnichar" cname="pango_bidi_type_for_unichar" shared="true">
+        <return-type type="PangoBidiType"/>
+        <parameters>
+          <parameter name="ch" type="gunichar"/>
+        </parameters>
+      </method>
+      <method name="Break" cname="pango_break" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="analysis" type="PangoAnalysis*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="attrs" type="PangoLogAttr*" array="true" array_length_param_index="4"/>
+          <parameter name="attrs_len" type="gint"/>
+        </parameters>
+      </method>
+      <method name="ExtentsToPixels" cname="pango_extents_to_pixels" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter allow-none="1" name="inclusive" type="PangoRectangle*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="nearest" type="PangoRectangle*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="FindBaseDir" cname="pango_find_base_dir" shared="true">
+        <return-type type="PangoDirection"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+        </parameters>
+      </method>
+      <method name="FindParagraphBoundary" cname="pango_find_paragraph_boundary" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="paragraph_delimiter_index" type="gint*" owned="true" pass_as="out"/>
+          <parameter name="next_paragraph_start" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="FontDescriptionFromString" cname="pango_font_description_from_string" shared="true">
+        <return-type type="PangoFontDescription*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="str" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="GetLogAttrs" cname="pango_get_log_attrs" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="level" type="gint"/>
+          <parameter name="language" type="PangoLanguage*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="log_attrs" type="PangoLogAttr*" array="true" array_length_param_index="5"/>
+          <parameter name="attrs_len" type="gint"/>
+        </parameters>
+      </method>
+      <method name="GetMirrorChar" cname="pango_get_mirror_char" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="ch" type="gunichar"/>
+          <parameter name="mirrored_ch" type="gunichar"/>
+        </parameters>
+      </method>
+      <method name="GravityGetForMatrix" cname="pango_gravity_get_for_matrix" shared="true">
+        <return-type type="PangoGravity"/>
+        <parameters>
+          <parameter name="matrix" type="PangoMatrix*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GravityGetForScript" cname="pango_gravity_get_for_script" shared="true">
+        <return-type type="PangoGravity"/>
+        <parameters>
+          <parameter name="script" type="PangoScript"/>
+          <parameter name="base_gravity" type="PangoGravity"/>
+          <parameter name="hint" type="PangoGravityHint"/>
+        </parameters>
+      </method>
+      <method name="GravityGetForScriptAndWidth" cname="pango_gravity_get_for_script_and_width" shared="true">
+        <return-type type="PangoGravity"/>
+        <parameters>
+          <parameter name="script" type="PangoScript"/>
+          <parameter name="wide" type="gboolean"/>
+          <parameter name="base_gravity" type="PangoGravity"/>
+          <parameter name="hint" type="PangoGravityHint"/>
+        </parameters>
+      </method>
+      <method name="GravityToRotation" cname="pango_gravity_to_rotation" shared="true">
+        <return-type type="gdouble"/>
+        <parameters>
+          <parameter name="gravity" type="PangoGravity"/>
+        </parameters>
+      </method>
+      <method name="IsZeroWidth" cname="pango_is_zero_width" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="ch" type="gunichar"/>
+        </parameters>
+      </method>
+      <method name="Itemize" cname="pango_itemize" shared="true">
+        <return-type type="GList*" element_type="GList*" elements_owned="true" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="start_index" type="gint"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="attrs" type="PangoAttrList*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="cached_iter" type="PangoAttrIterator*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ItemizeWithBaseDir" cname="pango_itemize_with_base_dir" shared="true">
+        <return-type type="GList*" element_type="GList*" elements_owned="true" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+          <parameter name="base_dir" type="PangoDirection"/>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="start_index" type="gint"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="attrs" type="PangoAttrList*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="cached_iter" type="PangoAttrIterator*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="LanguageFromString" cname="pango_language_from_string" shared="true">
+        <return-type type="PangoLanguage*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter allow-none="1" name="language" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="LanguageGetDefault" cname="pango_language_get_default" shared="true">
+        <return-type type="PangoLanguage*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+      </method>
+      <method name="Log2visGetEmbeddingLevels" cname="pango_log2vis_get_embedding_levels" shared="true">
+        <return-type type="guint8"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="pbase_dir" type="PangoDirection"/>
+        </parameters>
+      </method>
+      <method name="MarkupParserFinish" cname="pango_markup_parser_finish" shared="true">
+        <return-type type="gboolean"/>
+        <parameters throws="1">
+          <parameter name="context" type="GMarkupParseContext*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="attr_list" type="PangoAttrList**" owned="true" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="text" type="gchar*" owned="true" pass_as="out"/>
+          <parameter allow-none="1" name="accel_char" type="gunichar*" owned="true" pass_as="out"/>
+          <parameter name="error" type="GError**"/>
+        </parameters>
+      </method>
+      <method name="MarkupParserNew" cname="pango_markup_parser_new" shared="true">
+        <return-type type="GMarkupParseContext*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="accel_marker" type="gunichar"/>
+        </parameters>
+      </method>
+      <method name="ParseEnum" cname="pango_parse_enum" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="type" type="GType"/>
+          <parameter allow-none="1" name="str" type="const-gchar*"/>
+          <parameter allow-none="1" name="value" type="gint*" owned="true" pass_as="out"/>
+          <parameter name="warn" type="gboolean"/>
+          <parameter allow-none="1" name="possible_values" type="gchar*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="ParseMarkup" cname="pango_parse_markup" shared="true">
+        <return-type type="gboolean"/>
+        <parameters throws="1">
+          <parameter name="markup_text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="accel_marker" type="gunichar"/>
+          <parameter allow-none="1" name="attr_list" type="PangoAttrList**" owned="true" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter allow-none="1" name="text" type="gchar*" owned="true" pass_as="out"/>
+          <parameter allow-none="1" name="accel_char" type="gunichar*" owned="true" pass_as="out"/>
+          <parameter name="error" type="GError**"/>
+        </parameters>
+      </method>
+      <method name="ParseStretch" cname="pango_parse_stretch" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="str" type="const-gchar*"/>
+          <parameter name="stretch" type="PangoStretch" pass_as="out"/>
+          <parameter name="warn" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="ParseStyle" cname="pango_parse_style" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="str" type="const-gchar*"/>
+          <parameter name="style" type="PangoStyle" pass_as="out"/>
+          <parameter name="warn" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="ParseVariant" cname="pango_parse_variant" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="str" type="const-gchar*"/>
+          <parameter name="variant" type="PangoVariant" pass_as="out"/>
+          <parameter name="warn" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="ParseWeight" cname="pango_parse_weight" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="str" type="const-gchar*"/>
+          <parameter name="weight" type="PangoWeight" pass_as="out"/>
+          <parameter name="warn" type="gboolean"/>
+        </parameters>
+      </method>
+      <method name="QuantizeLineGeometry" cname="pango_quantize_line_geometry" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="thickness" type="gint*" owned="true" pass_as="ref"/>
+          <parameter name="position" type="gint*" owned="true" pass_as="ref"/>
+        </parameters>
+      </method>
+      <method name="ReadLine" cname="pango_read_line" shared="true">
+        <return-type type="gint"/>
+        <parameters>
+          <parameter name="stream" type="gpointer"/>
+          <parameter name="str" type="GString*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ReorderItems" cname="pango_reorder_items" shared="true">
+        <return-type type="GList*" element_type="GList*" elements_owned="true" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="logical_items" type="GList*" element_type="GList*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ScanInt" cname="pango_scan_int" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="pos" type="gchar*" owned="true" pass_as="ref"/>
+          <parameter name="out" type="gint*" owned="true" pass_as="out"/>
+        </parameters>
+      </method>
+      <method name="ScanString" cname="pango_scan_string" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="pos" type="gchar*" owned="true" pass_as="ref"/>
+          <parameter name="out" type="GString*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ScanWord" cname="pango_scan_word" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="pos" type="gchar*" owned="true" pass_as="ref"/>
+          <parameter name="out" type="GString*" pass_as="out">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ScriptForUnichar" cname="pango_script_for_unichar" shared="true">
+        <return-type type="PangoScript"/>
+        <parameters>
+          <parameter name="ch" type="gunichar"/>
+        </parameters>
+      </method>
+      <method name="ScriptGetSampleLanguage" cname="pango_script_get_sample_language" shared="true">
+        <return-type type="PangoLanguage*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="script" type="PangoScript"/>
+        </parameters>
+      </method>
+      <method name="Shape" cname="pango_shape" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="length" type="gint"/>
+          <parameter name="analysis" type="PangoAnalysis*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="glyphs" type="PangoGlyphString*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ShapeFull" cname="pango_shape_full" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="item_text" type="const-gchar*"/>
+          <parameter name="item_length" type="gint"/>
+          <parameter allow-none="1" name="paragraph_text" type="const-gchar*"/>
+          <parameter name="paragraph_length" type="gint"/>
+          <parameter name="analysis" type="PangoAnalysis*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="glyphs" type="PangoGlyphString*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="SkipSpace" cname="pango_skip_space" shared="true">
+        <return-type type="gboolean"/>
+        <parameters>
+          <parameter name="pos" type="gchar*" owned="true" pass_as="ref"/>
+        </parameters>
+      </method>
+      <method name="SplitFileList" cname="pango_split_file_list" shared="true">
+        <return-type type="char***" owned="true" array="true" null_term_array="true"/>
+        <parameters>
+          <parameter name="str" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="TrimString" cname="pango_trim_string" shared="true">
+        <return-type type="gchar*" owned="true"/>
+        <parameters>
+          <parameter name="str" type="const-gchar*"/>
+        </parameters>
+      </method>
+      <method name="UnicharDirection" cname="pango_unichar_direction" shared="true">
+        <return-type type="PangoDirection"/>
+        <parameters>
+          <parameter name="ch" type="gunichar"/>
+        </parameters>
+      </method>
+      <method name="UnitsFromDouble" cname="pango_units_from_double" shared="true">
+        <return-type type="gint"/>
+        <parameters>
+          <parameter name="d" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="UnitsToDouble" cname="pango_units_to_double" shared="true">
+        <return-type type="gdouble"/>
+        <parameters>
+          <parameter name="i" type="gint"/>
+        </parameters>
+      </method>
+      <method name="Version" cname="pango_version" shared="true">
+        <return-type type="gint"/>
+      </method>
+      <method name="VersionCheck" cname="pango_version_check" shared="true">
+        <return-type type="const-gchar*"/>
+        <parameters>
+          <parameter name="required_major" type="gint"/>
+          <parameter name="required_minor" type="gint"/>
+          <parameter name="required_micro" type="gint"/>
+        </parameters>
+      </method>
+      <method name="VersionString" cname="pango_version_string" shared="true">
+        <return-type type="const-gchar*"/>
+      </method>
+    </object>
+    <object name="Constants" cname="PangoConstants" opaque="true">
+      <constant value="1" ctype="gint" gtype="gint" name="ANALYSIS_FLAG_CENTERED_BASELINE"/>
+      <constant value="0" ctype="gint" gtype="gint" name="ATTR_INDEX_FROM_TEXT_BEGINNING"/>
+      <constant value="PangoEngineLang" ctype="gchar*" gtype="gchar*" name="ENGINE_TYPE_LANG"/>
+      <constant value="PangoEngineShape" ctype="gchar*" gtype="gchar*" name="ENGINE_TYPE_SHAPE"/>
+      <constant value="PangoRenderNone" ctype="gchar*" gtype="gchar*" name="RENDER_TYPE_NONE"/>
+      <constant value="1024" ctype="gint" gtype="gint" name="SCALE"/>
+      <constant value="14" ctype="gint" gtype="gint" name="UNKNOWN_GLYPH_HEIGHT"/>
+      <constant value="10" ctype="gint" gtype="gint" name="UNKNOWN_GLYPH_WIDTH"/>
+    </object>
+  </namespace>
+  <namespace name="PangoFT2" library="pangoft2-1.0">
+    <callback name="SubstituteFunc" cname="PangoFT2SubstituteFunc">
+      <return-type type="void"/>
+      <parameters>
+        <parameter name="pattern" type="FcPattern*">
+          <warning>missing glib:type-name</warning>
+        </parameter>
+        <parameter name="data" type="gpointer"/>
+      </parameters>
+    </callback>
+    <object name="FontMap" cname="PangoFontMap" abstract="false" opaque="false" hidden="false" parent="PangoFontMap">
+      <method name="GetType" cname="pango_ft2_font_map_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <constructor cname="pango_ft2_font_map_new" disable_void_ctor=""/>
+      <method name="SetDefaultSubstitute" cname="pango_ft2_font_map_set_default_substitute">
+        <return-type type="void"/>
+        <parameters>
+          <parameter closure="1" destroy="2" scope="notified" name="func" type="PangoFT2SubstituteFunc"/>
+          <parameter name="data" type="gpointer"/>
+          <parameter scope="async" name="notify" type="GDestroyNotify"/>
+        </parameters>
+      </method>
+      <method name="SetResolution" cname="pango_ft2_font_map_set_resolution">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="dpi_x" type="gdouble"/>
+          <parameter name="dpi_y" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="SubstituteChanged" cname="pango_ft2_font_map_substitute_changed">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+    </object>
+    <object name="Global" cname="PangoFT2Global" opaque="true">
+      <method name="FontGetCoverage" cname="pango_ft2_font_get_coverage" shared="true">
+        <return-type type="PangoCoverage*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="language" type="PangoLanguage*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="FontGetFace" cname="pango_ft2_font_get_face" shared="true">
+        <return-type type="FT_Face">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="font" type="PangoFont*"/>
+        </parameters>
+      </method>
+      <method name="FontGetKerning" cname="pango_ft2_font_get_kerning" shared="true">
+        <return-type type="gint"/>
+        <parameters>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="left" type="guint32"/>
+          <parameter name="right" type="guint32"/>
+        </parameters>
+      </method>
+      <method name="GetContext" cname="pango_ft2_get_context" shared="true">
+        <return-type type="PangoContext*"/>
+        <parameters>
+          <parameter name="dpi_x" type="gdouble"/>
+          <parameter name="dpi_y" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="GetUnknownGlyph" cname="pango_ft2_get_unknown_glyph" shared="true">
+        <return-type type="guint32"/>
+        <parameters>
+          <parameter name="font" type="PangoFont*"/>
+        </parameters>
+      </method>
+      <method name="Render" cname="pango_ft2_render" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="bitmap" type="FT_Bitmap*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="glyphs" type="PangoGlyphString*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="RenderLayout" cname="pango_ft2_render_layout" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="bitmap" type="FT_Bitmap*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="layout" type="PangoLayout*"/>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="RenderLayoutLine" cname="pango_ft2_render_layout_line" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="bitmap" type="FT_Bitmap*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="line" type="PangoLayoutLine*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="RenderLayoutLineSubpixel" cname="pango_ft2_render_layout_line_subpixel" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="bitmap" type="FT_Bitmap*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="line" type="PangoLayoutLine*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="RenderLayoutSubpixel" cname="pango_ft2_render_layout_subpixel" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="bitmap" type="FT_Bitmap*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="layout" type="PangoLayout*"/>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="RenderTransformed" cname="pango_ft2_render_transformed" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="bitmap" type="FT_Bitmap*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="matrix" type="PangoMatrix*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="glyphs" type="PangoGlyphString*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gint"/>
+          <parameter name="y" type="gint"/>
+        </parameters>
+      </method>
+      <method name="ShutdownDisplay" cname="pango_ft2_shutdown_display" shared="true">
+        <return-type type="void"/>
+      </method>
+    </object>
+    <object name="Constants" cname="PangoFT2Constants" opaque="true"/>
+  </namespace>
+  <namespace name="PangoCairo" library="pango-1.0">
+    <callback name="ShapeRendererFunc" cname="PangoCairoShapeRendererFunc">
+      <return-type type="void"/>
+      <parameters>
+        <parameter name="cr" type="cairo_t*">
+          <warning>missing glib:type-name</warning>
+        </parameter>
+        <parameter name="attr" type="PangoAttrShape*">
+          <warning>missing glib:type-name</warning>
+        </parameter>
+        <parameter name="do_path" type="gboolean"/>
+        <parameter name="data" type="gpointer"/>
+      </parameters>
+    </callback>
+    <interface name="Font" cname="PangoFont" abstract="false" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_cairo_font_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="GetScaledFont" cname="pango_cairo_font_get_scaled_font">
+        <return-type type="cairo_scaled_font_t*" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+    </interface>
+    <interface name="FontMap" cname="PangoFontMap" abstract="false" opaque="false" hidden="false">
+      <method name="GetType" cname="pango_cairo_font_map_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <method name="GetDefault" cname="pango_cairo_font_map_get_default" shared="true">
+        <return-type type="PangoFontMap*"/>
+      </method>
+      <method name="New" cname="pango_cairo_font_map_new" shared="true">
+        <return-type type="PangoFontMap*" owned="true"/>
+      </method>
+      <method name="NewForFontType" cname="pango_cairo_font_map_new_for_font_type" shared="true">
+        <return-type type="PangoFontMap*" owned="true"/>
+        <parameters>
+          <parameter name="fonttype" type="cairo_font_type_t">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GetFontType" cname="pango_cairo_font_map_get_font_type">
+        <return-type type="cairo_font_type_t" owned="true">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters/>
+      </method>
+      <method name="GetResolution" cname="pango_cairo_font_map_get_resolution">
+        <return-type type="gdouble"/>
+        <parameters/>
+      </method>
+      <method name="SetDefault" cname="pango_cairo_font_map_set_default">
+        <return-type type="void"/>
+        <parameters/>
+      </method>
+      <method name="SetResolution" cname="pango_cairo_font_map_set_resolution">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="dpi" type="gdouble"/>
+        </parameters>
+      </method>
+    </interface>
+    <object name="FcFontMap" cname="PangoCairoFcFontMap" abstract="false" opaque="false" hidden="false" parent="PangoFontMap">
+      <implements>
+        <interface cname="PangoFontMap"/>
+      </implements>
+      <method name="GetType" cname="pango_cairo_fc_font_map_get_type" shared="true">
+        <return-type type="GType"/>
+      </method>
+      <field cname="parent_instance" access="public" writeable="false" readable="true" name="ParentInstance" type="PangoFcFontMap"/>
+      <field cname="serial" access="public" writeable="false" readable="true" name="Serial" type="guint"/>
+      <field cname="dpi" access="public" writeable="false" readable="true" name="Dpi" type="gdouble"/>
+      <field cname="library" access="public" writeable="false" readable="true" name="Library" type="FT_Library">
+        <warning>missing glib:type-name</warning>
+      </field>
+    </object>
+    <object name="Global" cname="PangoCairoGlobal" opaque="true">
+      <method name="ContextGetFontOptions" cname="pango_cairo_context_get_font_options" shared="true">
+        <return-type type="cairo_font_options_t*">
+          <warning>missing glib:type-name</warning>
+        </return-type>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+        </parameters>
+      </method>
+      <method name="ContextGetResolution" cname="pango_cairo_context_get_resolution" shared="true">
+        <return-type type="gdouble"/>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+        </parameters>
+      </method>
+      <method name="ContextGetShapeRenderer" cname="pango_cairo_context_get_shape_renderer" shared="true">
+        <return-type type="PangoCairoShapeRendererFunc"/>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+          <parameter name="data" type="gpointer"/>
+        </parameters>
+      </method>
+      <method name="ContextSetFontOptions" cname="pango_cairo_context_set_font_options" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+          <parameter name="options" type="cairo_font_options_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ContextSetResolution" cname="pango_cairo_context_set_resolution" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+          <parameter name="dpi" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="ContextSetShapeRenderer" cname="pango_cairo_context_set_shape_renderer" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="context" type="PangoContext*"/>
+          <parameter closure="2" destroy="3" scope="notified" name="func" type="PangoCairoShapeRendererFunc"/>
+          <parameter name="data" type="gpointer"/>
+          <parameter scope="async" name="dnotify" type="GDestroyNotify"/>
+        </parameters>
+      </method>
+      <method name="CreateContext" cname="pango_cairo_create_context" shared="true">
+        <return-type type="PangoContext*" owned="true"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="CreateLayout" cname="pango_cairo_create_layout" shared="true">
+        <return-type type="PangoLayout*" owned="true"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ErrorUnderlinePath" cname="pango_cairo_error_underline_path" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gdouble"/>
+          <parameter name="y" type="gdouble"/>
+          <parameter name="width" type="gdouble"/>
+          <parameter name="height" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="FontMapGetDefault" cname="pango_cairo_font_map_get_default" shared="true">
+        <return-type type="PangoFontMap*"/>
+      </method>
+      <method name="FontMapNew" cname="pango_cairo_font_map_new" shared="true">
+        <return-type type="PangoFontMap*" owned="true"/>
+      </method>
+      <method name="FontMapNewForFontType" cname="pango_cairo_font_map_new_for_font_type" shared="true">
+        <return-type type="PangoFontMap*" owned="true"/>
+        <parameters>
+          <parameter name="fonttype" type="cairo_font_type_t">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="GlyphStringPath" cname="pango_cairo_glyph_string_path" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="glyphs" type="PangoGlyphString*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="LayoutLinePath" cname="pango_cairo_layout_line_path" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="line" type="PangoLayoutLine*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="LayoutPath" cname="pango_cairo_layout_path" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="layout" type="PangoLayout*"/>
+        </parameters>
+      </method>
+      <method name="ShowErrorUnderline" cname="pango_cairo_show_error_underline" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="x" type="gdouble"/>
+          <parameter name="y" type="gdouble"/>
+          <parameter name="width" type="gdouble"/>
+          <parameter name="height" type="gdouble"/>
+        </parameters>
+      </method>
+      <method name="ShowGlyphItem" cname="pango_cairo_show_glyph_item" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="text" type="const-gchar*"/>
+          <parameter name="glyph_item" type="PangoGlyphItem*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ShowGlyphString" cname="pango_cairo_show_glyph_string" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="font" type="PangoFont*"/>
+          <parameter name="glyphs" type="PangoGlyphString*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="ShowLayout" cname="pango_cairo_show_layout" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="layout" type="PangoLayout*"/>
+        </parameters>
+      </method>
+      <method name="ShowLayoutLine" cname="pango_cairo_show_layout_line" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="line" type="PangoLayoutLine*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="UpdateContext" cname="pango_cairo_update_context" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="context" type="PangoContext*"/>
+        </parameters>
+      </method>
+      <method name="UpdateLayout" cname="pango_cairo_update_layout" shared="true">
+        <return-type type="void"/>
+        <parameters>
+          <parameter name="cr" type="cairo_t*">
+            <warning>missing glib:type-name</warning>
+          </parameter>
+          <parameter name="layout" type="PangoLayout*"/>
+        </parameters>
+      </method>
+    </object>
+    <object name="Constants" cname="PangoCairoConstants" opaque="true"/>
+  </namespace>
+</api>

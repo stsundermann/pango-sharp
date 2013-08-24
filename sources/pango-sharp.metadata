@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<metadata>
+	<add-node path="/api"><include xml="glib-api.xml" /></add-node>
+	<attr path="/api/namespace[@name='Pango']" name="library">libpango-1.0-0.dll</attr>
+	<attr path="/api/namespace[@name='PangoCairo']" name="library">libpangocairo-1.0-0.dll</attr>
+	<attr path="/api/namespace[@name='PangoFT2']" name="library">libpangoft2-1.0-0.dll</attr>
+	<attr path="/api/namespace/object[@cname='PangoCairoGlobal']/method[@cname='pango_cairo_context_get_font_options']" name="hidden">1</attr>
+	<attr path="/api/namespace/object[@cname='PangoCairoGlobal']/method[@name='pango_cairo_context_set_font_options']" name="hidden">1</attr>
+	<attr path="/api/namespace[@name='PangoFT2']/object[@cname='PangoFontMap']" name="hidden">1</attr>
+	<attr path="/api/namespace/interface[@name='Font']" name="hidden">1</attr>
+	<attr path="/api/namespace/interface[@name='FontMap']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@name='_ScriptForLang']" name="hidden">1</attr>
+	<attr path="/api/namespace/object[@cname='PangoContext']/method[@name='ListFamilies']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoCoverage']/method[@cname='pango_coverage_to_bytes']" name="hidden">1</attr>
+	<attr path="/api/namespace/object[@cname='PangoFontFace']/method[@cname='pango_font_face_list_sizes']" name="hidden">1</attr>
+	<attr path="/api/namespace/object[@cname='PangoFontFace']" name="abstract">0</attr>
+	<attr path="/api/namespace/object[@cname='PangoFontMap']/method[@cname='pango_font_map_list_families']" name="hidden">1</attr>
+	<attr path="/api/namespace/object[@cname='PangoFontFamily']/method[@cname='pango_font_family_list_faces']" name="hidden">1</attr>
+	<attr path="/api/namespace/object[@cname='PangoLayout']/method[@cname='pango_layout_get_log_attrs']" name="hidden">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoLayoutLine']/method[@cname='pango_layout_line_get_x_ranges']" name="hidden">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoTabArray']/method[@name='GetTabs']" name="hidden">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoTabArray']" name="opaque">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoLanguage']" name="opaque">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoFontDescription']" name="opaque">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoFontMetrics']" name="opaque">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoLayoutIter']" name="opaque">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoLayoutLine']" name="opaque">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoFontMetrics']" name="opaque">1</attr>
+	<attr path="/api/namespace/boxed[@cname='PangoFontMetrics']" name="opaque">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttribute']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttrClass']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttrColor']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttrFloat']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttrFontDesc']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttrInt']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttrLanguage']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttrShape']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttrSize']" name="hidden">1</attr>
+	<attr path="/api/namespace/struct[@cname='PangoAttrString']" name="hidden">1</attr>
+</metadata>
