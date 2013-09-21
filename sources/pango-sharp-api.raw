@@ -242,7 +242,7 @@
     <callback hidden="0" name="AttrDataCopyFunc" cname="PangoAttrDataCopyFunc">
       <return-type type="gpointer"/>
       <parameters>
-        <parameter name="user_data" type="gpointer"/>
+        <parameter closure="0" name="user_data" type="gpointer"/>
       </parameters>
     </callback>
     <callback name="AttrFilterFunc" cname="PangoAttrFilterFunc">
@@ -251,7 +251,7 @@
         <parameter name="attribute" type="PangoAttribute*">
           <warning>missing glib:type-name</warning>
         </parameter>
-        <parameter name="user_data" type="gpointer"/>
+        <parameter closure="1" name="user_data" type="gpointer"/>
       </parameters>
     </callback>
     <callback name="FontsetForeachFunc" cname="PangoFontsetForeachFunc">
@@ -259,7 +259,7 @@
       <parameters>
         <parameter name="fontset" type="PangoFontset*"/>
         <parameter name="font" type="PangoFont*"/>
-        <parameter name="user_data" type="gpointer"/>
+        <parameter closure="2" name="user_data" type="gpointer"/>
       </parameters>
     </callback>
     <object name="Context" cname="PangoContext" abstract="false" opaque="false" hidden="false" parent="GObject">
@@ -2911,167 +2911,6 @@
       <constant value="10" ctype="gint" gtype="gint" name="UNKNOWN_GLYPH_WIDTH"/>
     </object>
   </namespace>
-  <namespace name="PangoFT2" library="pangoft2-1.0">
-    <callback name="SubstituteFunc" cname="PangoFT2SubstituteFunc">
-      <return-type type="void"/>
-      <parameters>
-        <parameter name="pattern" type="FcPattern*">
-          <warning>missing glib:type-name</warning>
-        </parameter>
-        <parameter name="data" type="gpointer"/>
-      </parameters>
-    </callback>
-    <object name="FontMap" cname="PangoFontMap" abstract="false" opaque="false" hidden="false" parent="PangoFontMap">
-      <method name="GetType" cname="pango_ft2_font_map_get_type" shared="true">
-        <return-type type="GType"/>
-      </method>
-      <constructor cname="pango_ft2_font_map_new" disable_void_ctor=""/>
-      <method name="SetDefaultSubstitute" cname="pango_ft2_font_map_set_default_substitute">
-        <return-type type="void"/>
-        <parameters>
-          <parameter closure="1" destroy="2" scope="notified" name="func" type="PangoFT2SubstituteFunc"/>
-          <parameter name="data" type="gpointer"/>
-          <parameter scope="async" name="notify" type="GDestroyNotify"/>
-        </parameters>
-      </method>
-      <method name="SetResolution" cname="pango_ft2_font_map_set_resolution">
-        <return-type type="void"/>
-        <parameters>
-          <parameter name="dpi_x" type="gdouble"/>
-          <parameter name="dpi_y" type="gdouble"/>
-        </parameters>
-      </method>
-      <method name="SubstituteChanged" cname="pango_ft2_font_map_substitute_changed">
-        <return-type type="void"/>
-        <parameters/>
-      </method>
-    </object>
-    <object name="Global" cname="PangoFT2Global" opaque="true">
-      <method name="FontGetCoverage" cname="pango_ft2_font_get_coverage" shared="true">
-        <return-type type="PangoCoverage*">
-          <warning>missing glib:type-name</warning>
-        </return-type>
-        <parameters>
-          <parameter name="font" type="PangoFont*"/>
-          <parameter name="language" type="PangoLanguage*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-        </parameters>
-      </method>
-      <method name="FontGetFace" cname="pango_ft2_font_get_face" shared="true">
-        <return-type type="FT_Face">
-          <warning>missing glib:type-name</warning>
-        </return-type>
-        <parameters>
-          <parameter name="font" type="PangoFont*"/>
-        </parameters>
-      </method>
-      <method name="FontGetKerning" cname="pango_ft2_font_get_kerning" shared="true">
-        <return-type type="gint"/>
-        <parameters>
-          <parameter name="font" type="PangoFont*"/>
-          <parameter name="left" type="guint32"/>
-          <parameter name="right" type="guint32"/>
-        </parameters>
-      </method>
-      <method name="GetContext" cname="pango_ft2_get_context" shared="true">
-        <return-type type="PangoContext*"/>
-        <parameters>
-          <parameter name="dpi_x" type="gdouble"/>
-          <parameter name="dpi_y" type="gdouble"/>
-        </parameters>
-      </method>
-      <method name="GetUnknownGlyph" cname="pango_ft2_get_unknown_glyph" shared="true">
-        <return-type type="guint32"/>
-        <parameters>
-          <parameter name="font" type="PangoFont*"/>
-        </parameters>
-      </method>
-      <method name="Render" cname="pango_ft2_render" shared="true">
-        <return-type type="void"/>
-        <parameters>
-          <parameter name="bitmap" type="FT_Bitmap*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="font" type="PangoFont*"/>
-          <parameter name="glyphs" type="PangoGlyphString*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="x" type="gint"/>
-          <parameter name="y" type="gint"/>
-        </parameters>
-      </method>
-      <method name="RenderLayout" cname="pango_ft2_render_layout" shared="true">
-        <return-type type="void"/>
-        <parameters>
-          <parameter name="bitmap" type="FT_Bitmap*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="layout" type="PangoLayout*"/>
-          <parameter name="x" type="gint"/>
-          <parameter name="y" type="gint"/>
-        </parameters>
-      </method>
-      <method name="RenderLayoutLine" cname="pango_ft2_render_layout_line" shared="true">
-        <return-type type="void"/>
-        <parameters>
-          <parameter name="bitmap" type="FT_Bitmap*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="line" type="PangoLayoutLine*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="x" type="gint"/>
-          <parameter name="y" type="gint"/>
-        </parameters>
-      </method>
-      <method name="RenderLayoutLineSubpixel" cname="pango_ft2_render_layout_line_subpixel" shared="true">
-        <return-type type="void"/>
-        <parameters>
-          <parameter name="bitmap" type="FT_Bitmap*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="line" type="PangoLayoutLine*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="x" type="gint"/>
-          <parameter name="y" type="gint"/>
-        </parameters>
-      </method>
-      <method name="RenderLayoutSubpixel" cname="pango_ft2_render_layout_subpixel" shared="true">
-        <return-type type="void"/>
-        <parameters>
-          <parameter name="bitmap" type="FT_Bitmap*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="layout" type="PangoLayout*"/>
-          <parameter name="x" type="gint"/>
-          <parameter name="y" type="gint"/>
-        </parameters>
-      </method>
-      <method name="RenderTransformed" cname="pango_ft2_render_transformed" shared="true">
-        <return-type type="void"/>
-        <parameters>
-          <parameter name="bitmap" type="FT_Bitmap*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="matrix" type="PangoMatrix*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="font" type="PangoFont*"/>
-          <parameter name="glyphs" type="PangoGlyphString*">
-            <warning>missing glib:type-name</warning>
-          </parameter>
-          <parameter name="x" type="gint"/>
-          <parameter name="y" type="gint"/>
-        </parameters>
-      </method>
-      <method name="ShutdownDisplay" cname="pango_ft2_shutdown_display" shared="true">
-        <return-type type="void"/>
-      </method>
-    </object>
-    <object name="Constants" cname="PangoFT2Constants" opaque="true"/>
-  </namespace>
   <namespace name="PangoCairo" library="pango-1.0">
     <callback name="ShapeRendererFunc" cname="PangoCairoShapeRendererFunc">
       <return-type type="void"/>
@@ -3086,7 +2925,7 @@
         <parameter name="data" type="gpointer"/>
       </parameters>
     </callback>
-    <interface name="Font" cname="PangoFont" abstract="false" opaque="false" hidden="false">
+    <interface name="Font" cname="PangoFont" abstract="false" opaque="false" hidden="false" consume_only="true">
       <method name="GetType" cname="pango_cairo_font_get_type" shared="true">
         <return-type type="GType"/>
       </method>
@@ -3097,7 +2936,7 @@
         <parameters/>
       </method>
     </interface>
-    <interface name="FontMap" cname="PangoFontMap" abstract="false" opaque="false" hidden="false">
+    <interface name="FontMap" cname="PangoFontMap" abstract="false" opaque="false" hidden="false" consume_only="true">
       <method name="GetType" cname="pango_cairo_font_map_get_type" shared="true">
         <return-type type="GType"/>
       </method>
@@ -3146,9 +2985,7 @@
       <field cname="parent_instance" access="public" writeable="false" readable="true" name="ParentInstance" type="PangoFcFontMap"/>
       <field cname="serial" access="public" writeable="false" readable="true" name="Serial" type="guint"/>
       <field cname="dpi" access="public" writeable="false" readable="true" name="Dpi" type="gdouble"/>
-      <field cname="library" access="public" writeable="false" readable="true" name="Library" type="FT_Library">
-        <warning>missing glib:type-name</warning>
-      </field>
+      <field cname="library" access="public" writeable="false" readable="true" name="Library" type="freetype2.Library"/>
     </object>
     <object name="Global" cname="PangoCairoGlobal" opaque="true">
       <method name="ContextGetFontOptions" cname="pango_cairo_context_get_font_options" shared="true">
